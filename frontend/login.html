@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student login and registration for SANDUN ABEYSEKARA A/L Physics education.">
+    <title>Student Access | SANDUN ABEYSEKARA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header"></header>
+    <main id="main-content">
+        <section class="course-hero">
+            <div class="course-hero-grid">
+                <div class="course-intro">
+                    <p class="eyebrow"><span></span> SANDUN ABEYSEKARA · A/L PHYSICS EDUCATION</p>
+                    <h1>Login</h1>
+                    <p class="course-lead">Sign in to your student account, or create one to begin your A/L Physics learning journey.</p>
+                    <div class="course-actions">
+                        <a class="button button-primary" href="#student-access">Login or register</a>
+                        <a class="button button-secondary" href="dashboard.html">View dashboard</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="student-auth-section" id="student-access" aria-labelledby="student-access-heading">
+            <div class="section-shell student-auth-layout">
+                <aside class="student-auth-intro">
+                    <p class="student-auth-kicker">YOUR LEARNING SPACE</p>
+                    <h2 id="student-access-heading">Build your next big idea, one lesson at a time.</h2>
+                    <p>Use your own account to access the student area. New accounts need email confirmation before you can sign in.</p>
+                    <ul>
+                        <li><span aria-hidden="true">01</span> Register with an email address you can access.</li>
+                        <li><span aria-hidden="true">02</span> Confirm your email from the message we send.</li>
+                        <li><span aria-hidden="true">03</span> Sign in to open the student dashboard.</li>
+                    </ul>
+                </aside>
+
+                <section class="student-auth-panel" aria-labelledby="auth-form-heading">
+                    <div class="student-auth-panel-heading">
+                        <p class="student-auth-kicker">STUDENT ACCOUNT</p>
+                        <h2 id="auth-form-heading">Student Login</h2>
+                        <p id="auth-form-description">Welcome back. Enter your account details to continue.</p>
+                    </div>
+
+                    <div class="student-auth-modes" role="group" aria-label="Choose login or registration">
+                        <button class="student-auth-mode" type="button" data-auth-mode="login" aria-controls="student-login-form" aria-pressed="true">Login</button>
+                        <button class="student-auth-mode" type="button" data-auth-mode="register" aria-controls="student-register-form" aria-pressed="false">Create New Account</button>
+                    </div>
+
+                    <p class="student-auth-status" id="auth-status" role="status" aria-live="polite" aria-atomic="true" hidden></p>
+
+                    <form id="student-login-form" class="student-auth-form" novalidate>
+                        <div class="student-auth-field">
+                            <label for="login-email">Email address</label>
+                            <input id="login-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required>
+                        </div>
+                        <div class="student-auth-field">
+                            <label for="login-password">Password</label>
+                            <div class="student-auth-password">
+                                <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+                                <button class="student-password-toggle" type="button" data-password-toggle="login-password" aria-controls="login-password" aria-label="Show password" aria-pressed="false">Show</button>
+                            </div>
+                        </div>
+                        <button class="student-auth-submit" type="submit">
+                            <span data-submit-label data-ready-text="Sign in">Sign in</span>
+                            <span class="student-auth-spinner" aria-hidden="true" hidden></span>
+                        </button>
+                    </form>
+
+                    <form id="student-register-form" class="student-auth-form" novalidate hidden>
+                        <div class="student-auth-field">
+                            <label for="register-email">Email address</label>
+                            <input id="register-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required>
+                        </div>
+                        <div class="student-auth-field">
+                            <label for="register-password">Password</label>
+                            <div class="student-auth-password">
+                                <input id="register-password" name="password" type="password" autocomplete="new-password" minlength="6" aria-describedby="password-requirement" required>
+                                <button class="student-password-toggle" type="button" data-password-toggle="register-password" aria-controls="register-password" aria-label="Show password" aria-pressed="false">Show</button>
+                            </div>
+                            <p class="student-auth-help" id="password-requirement">Use at least 6 characters.</p>
+                        </div>
+                        <div class="student-auth-field">
+                            <label for="register-password-confirm">Confirm password</label>
+                            <div class="student-auth-password">
+                                <input id="register-password-confirm" name="password-confirm" type="password" autocomplete="new-password" minlength="6" required>
+                                <button class="student-password-toggle" type="button" data-password-toggle="register-password-confirm" aria-controls="register-password-confirm" aria-label="Show password" aria-pressed="false">Show</button>
+                            </div>
+                        </div>
+                        <button class="student-auth-submit" type="submit">
+                            <span data-submit-label data-ready-text="Create account">Create account</span>
+                            <span class="student-auth-spinner" aria-hidden="true" hidden></span>
+                        </button>
+                    </form>
+
+                    <p class="student-auth-privacy">Your password is sent securely to Supabase Auth. This website does not save passwords in browser storage.</p>
+                </section>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <script src="js/site-shell.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-client.js"></script>
+    <script src="js/student-auth.js"></script>
+    <script src="js/color-themes.js"></script>
+</body>
+</html>

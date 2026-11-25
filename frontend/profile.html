@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage your private student profile for SANDUN ABEYSEKARA A/L Physics education.">
+    <title>My Profile | SANDUN ABEYSEKARA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header"></header>
+    <main id="main-content" class="student-profile-page">
+        <div class="student-profile-shell">
+            <a class="profile-back-link" href="dashboard.html">← Back to dashboard</a>
+
+            <section class="profile-hero" aria-labelledby="profile-page-heading">
+                <div>
+                    <p class="profile-eyebrow"><span aria-hidden="true"></span> STUDENT SPACE · PROFILE</p>
+                    <h1 id="profile-page-heading">Your learning profile</h1>
+                    <p>Make this space yours. Add only the details you want to share with your learning platform.</p>
+                </div>
+                <div class="profile-hero-mark" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" focusable="false"><circle cx="32" cy="21" r="10"></circle><path d="M12 56c0-12 8-20 20-20s20 8 20 20"></path><path d="m47 11 2.5 5.5L55 19l-5.5 2.5L47 27l-2.5-5.5L39 19l5.5-2.5z"></path></svg>
+                </div>
+            </section>
+
+            <aside class="profile-preview-notice" aria-label="Profile preview and privacy notice">
+                <span aria-hidden="true">i</span>
+                <p><strong>Your profile is private to your account.</strong> Only the signed-in student's profile is loaded or saved. Your name, school and learning details are saved to your own profile row. Profile photos are stored in a private bucket and displayed using temporary signed links.</p>
+            </aside>
+
+            <div class="profile-main-grid">
+                <section class="profile-editor-card" id="edit-profile" aria-labelledby="edit-profile-heading">
+                    <div class="profile-section-heading">
+                        <div>
+                            <p class="profile-section-kicker">EDIT YOUR DETAILS</p>
+                            <h2 id="edit-profile-heading">Profile information</h2>
+                        </div>
+                        <span class="profile-preview-chip">Draft preview</span>
+                    </div>
+
+                    <form id="student-profile-form" novalidate>
+                        <fieldset class="profile-photo-field">
+                            <legend>Profile photo <span>Optional</span></legend>
+                            <div class="profile-photo-controls">
+                                <div class="profile-avatar-frame" aria-label="Profile photo preview">
+                                    <div class="profile-avatar-fallback" id="profile-avatar-fallback" aria-hidden="true">
+                                        <svg viewBox="0 0 64 64" focusable="false"><circle cx="32" cy="22" r="11"></circle><path d="M10 58c0-13 9-22 22-22s22 9 22 22"></path></svg>
+                                    </div>
+                                    <img class="profile-avatar-image" id="profile-photo-preview" alt="Selected profile photo preview" hidden>
+                                </div>
+                                <div class="profile-photo-actions">
+                                    <label class="profile-file-trigger" for="profile-photo">Choose a photo</label>
+                                    <input class="profile-file-input" id="profile-photo" name="profile-photo" type="file" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp" aria-describedby="profile-photo-help profile-photo-message">
+                                    <button class="profile-remove-photo" id="remove-profile-photo" type="button" disabled>Remove photo</button>
+                                    <p class="profile-field-help" id="profile-photo-help">JPG, JPEG, PNG or WebP · maximum 5 MB. Photos are uploaded privately to your own folder.</p>
+                                    <p class="profile-field-message" id="profile-photo-message" role="status" aria-live="polite"></p>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="profile-form-grid">
+                            <div class="profile-field">
+                                <label for="profile-full-name">Full name <span>Optional</span></label>
+                                <input id="profile-full-name" name="full-name" type="text" autocomplete="name" maxlength="100" placeholder="Your full name">
+                            </div>
+                            <div class="profile-field">
+                                <label for="profile-display-name">Display name <span>Optional</span></label>
+                                <input id="profile-display-name" name="display-name" type="text" autocomplete="nickname" maxlength="50" placeholder="Name shown on your dashboard">
+                            </div>
+                            <div class="profile-field">
+                                <label for="profile-school">School <span>Optional</span></label>
+                                <input id="profile-school" name="school" type="text" autocomplete="organization" maxlength="100" placeholder="Your school">
+                            </div>
+                            <div class="profile-field">
+                                <label for="profile-grade">Grade <span>Optional</span></label>
+                                <input id="profile-grade" name="grade" type="text" maxlength="30" placeholder="e.g. Grade 12">
+                            </div>
+                            <div class="profile-field profile-field-wide">
+                                <label for="profile-about">About me <span>Optional</span></label>
+                                <textarea id="profile-about" name="about" rows="4" maxlength="240" placeholder="A short introduction about your learning goals or interests"></textarea>
+                                <span class="profile-field-help">Up to 240 characters. Avoid sharing sensitive personal information.</span>
+                            </div>
+                        </div>
+
+                        <div class="profile-form-actions">
+                            <button class="profile-save-button" id="save-profile-button" type="submit" aria-describedby="profile-save-help">
+                                <span class="profile-save-label">Save profile</span>
+                                <span class="profile-save-chip">Supabase</span>
+                                <span class="profile-save-spinner" aria-hidden="true" hidden></span>
+                            </button>
+                            <button class="profile-reset-button" type="reset">Discard unsaved changes</button>
+                        </div>
+                        <p class="profile-save-help" id="profile-save-help">Full name, display name, school, grade and about me are saved to your private profile. A selected photo is uploaded to private Storage and its path is saved with your profile.</p>
+                        <p class="profile-save-status" id="profile-save-status" role="status" aria-live="polite" hidden>Checking your account and loading your profile...</p>
+                    </form>
+                </section>
+
+                <aside class="profile-live-card" aria-labelledby="profile-preview-heading">
+                    <div class="profile-live-heading">
+                        <div>
+                            <p class="profile-section-kicker">YOUR PROFILE CARD</p>
+                            <h2 id="profile-preview-heading">Live preview</h2>
+                        </div>
+                        <span class="profile-live-indicator"><i aria-hidden="true"></i> <span id="profile-live-state">LOADING</span></span>
+                    </div>
+                    <div class="profile-live-identity">
+                        <div class="profile-live-avatar">
+                            <div class="profile-avatar-fallback" id="profile-live-fallback" aria-hidden="true">
+                                <svg viewBox="0 0 64 64" focusable="false"><circle cx="32" cy="22" r="11"></circle><path d="M10 58c0-13 9-22 22-22s22 9 22 22"></path></svg>
+                            </div>
+                            <img class="profile-avatar-image" id="profile-live-photo" alt="" hidden>
+                        </div>
+                        <div>
+                            <p class="profile-live-label">A/L PHYSICS STUDENT</p>
+                            <h3 id="profile-preview-name">Your display name</h3>
+                            <p id="profile-preview-full-name" class="profile-preview-full-name">Full name not added</p>
+                        </div>
+                    </div>
+                    <dl class="profile-preview-details">
+                        <div><dt>School</dt><dd id="profile-preview-school">Not provided</dd></div>
+                        <div><dt>Grade</dt><dd id="profile-preview-grade">Not provided</dd></div>
+                    </dl>
+                    <div class="profile-about-preview">
+                        <p>ABOUT ME</p>
+                        <span id="profile-preview-about">Your short introduction will appear here.</span>
+                    </div>
+                    <p class="profile-live-footnote">Your saved profile details appear here after they load.</p>
+                </aside>
+            </div>
+
+            <section class="profile-learning-section" aria-labelledby="profile-learning-heading">
+                <div class="profile-section-heading">
+                    <div>
+                        <p class="profile-section-kicker">YOUR A/L PHYSICS JOURNEY</p>
+                        <h2 id="profile-learning-heading">Learning at a glance</h2>
+                    </div>
+                    <span class="profile-preview-chip">No student data connected</span>
+                </div>
+                <div class="profile-learning-grid">
+                    <article class="profile-learning-card">
+                        <span class="profile-learning-icon" aria-hidden="true">↗</span>
+                        <p>Learning progress</p>
+                        <strong>Not available</strong>
+                        <small>Requires secure saved activity.</small>
+                    </article>
+                    <article class="profile-learning-card">
+                        <span class="profile-learning-icon" aria-hidden="true">✓</span>
+                        <p>Completed lessons</p>
+                        <strong>Not available</strong>
+                        <small>No lesson completions are stored.</small>
+                    </article>
+                    <article class="profile-learning-card">
+                        <span class="profile-learning-icon" aria-hidden="true">✦</span>
+                        <p>Achievement badges</p>
+                        <strong>None earned</strong>
+                        <small>Badges need verified student activity.</small>
+                    </article>
+                    <article class="profile-learning-card profile-favourites-card">
+                        <span class="profile-learning-icon" aria-hidden="true">♡</span>
+                        <p>Favourite lessons</p>
+                        <strong>No favourites saved</strong>
+                        <small>Favourites require an authenticated profile.</small>
+                        <a href="dashboard.html#my-learning">Browse syllabus <span aria-hidden="true">→</span></a>
+                    </article>
+                </div>
+            </section>
+
+            <aside class="profile-backend-note">
+                <h2>Private profile photos</h2>
+                <p>Photos use the private student-avatars bucket and are stored under your authenticated user ID. The bucket must remain private and have owner-only Storage policies that allow signed reads, uploads and deletion only in the matching user folder. Profile text and the storage path are saved to your own row in the existing profiles table.</p>
+            </aside>
+        </div>
+    </main>
+    <footer class="site-footer"></footer>
+    <script src="js/site-shell.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-client.js"></script>
+    <script src="js/student-profile-preview.js"></script>
+    <script src="js/color-themes.js"></script>
+</body>
+</html>
