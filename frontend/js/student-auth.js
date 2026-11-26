@@ -99,7 +99,7 @@
     async function findOwnProfile(client, userId) {
         const { data, error } = await client
             .from("profiles")
-            .select("id")
+            .select("id, learning_medium")
             .eq("id", userId)
             .maybeSingle();
         if (error) {
@@ -111,18 +111,25 @@
     async function ensureOwnProfile(client, userId) {
         const existingProfile = await findOwnProfile(client, userId);
         if (existingProfile) {
-            return;
+            return existingProfile;
         }
 
-        const { error } = await client.from("profiles").insert({ id: userId });
+        const { data, error } = await client
+            .from("profiles")
+            .insert({ id: userId })
+            .select("id, learning_medium")
+            .single();
         if (!error) {
-            return;
+            if (!data || data.id !== userId) {
+                throw new Error("Supabase did not confirm the signed-in student's profile.");
+            }
+            return data;
         }
 
         if (error.code === "23505") {
             const profileAfterRace = await findOwnProfile(client, userId);
             if (profileAfterRace) {
-                return;
+                return profileAfterRace;
             }
         }
         throw error;
@@ -158,8 +165,9 @@
                 throw userError || new Error("Supabase did not return the authenticated user.");
             }
 
+            let ownProfile;
             try {
-                await ensureOwnProfile(client, userData.user.id);
+                ownProfile = await ensureOwnProfile(client, userData.user.id);
             } catch (profileError) {
                 const { error: signOutError } = await client.auth.signOut();
                 if (signOutError) {
@@ -174,8 +182,9 @@
                 );
             }
 
-            setStatus("Sign-in successful. Opening your student dashboard...", "success");
-            window.location.assign("dashboard.html");
+            const hasLearningMedium = ["si", "en", "ta"].includes(ownProfile.learning_medium);
+            setStatus("Sign-in successful. Opening your student space...", "success");
+            window.location.assign(hasLearningMedium ? "dashboard.html" : "learning-medium.html");
         });
     }
 
@@ -250,6 +259,13 @@
             return;
         }
 
+        function setLogoutStatus(key, fallback) {
+            logoutNote.dataset.i18n = key;
+            logoutNote.textContent = typeof window.dashboardI18n === "function"
+                ? window.dashboardI18n(key)
+                : fallback;
+        }
+
         try {
             const client = getClient();
             const { data, error } = await client.auth.getSession();
@@ -258,17 +274,20 @@
             }
 
             logoutButton.disabled = !data.session;
-            logoutNote.textContent = data.session
-                ? "You are signed in. Use this button to securely end your session."
-                : "Sign in to enable sign-out.";
+            setLogoutStatus(
+                data.session ? "logoutSignedIn" : "logoutSignInRequired",
+                data.session
+                    ? "You are signed in. Use this button to securely end your session."
+                    : "Sign in to enable sign-out."
+            );
 
             logoutButton.addEventListener("click", async () => {
                 logoutButton.disabled = true;
-                logoutNote.textContent = "Signing out...";
+                setLogoutStatus("logoutSigningOut", "Signing out...");
                 const { error: signOutError } = await client.auth.signOut();
                 if (signOutError) {
                     console.error("Student sign-out failed.", signOutError);
-                    logoutNote.textContent = "Could not sign out. Please try again.";
+                    setLogoutStatus("logoutFailed", "Could not sign out. Please try again.");
                     logoutButton.disabled = false;
                     return;
                 }
@@ -277,7 +296,10 @@
         } catch (error) {
             console.error("Could not check the student session.", error);
             logoutButton.disabled = true;
-            logoutNote.textContent = "Session status is unavailable. Reload the page and try again.";
+            setLogoutStatus(
+                "logoutUnavailable",
+                "Session status is unavailable. Reload the page and try again."
+            );
         }
     }
 

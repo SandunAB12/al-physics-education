@@ -3,87 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sandun Abeysekara, A/L Physics Educator, sharing Physics educational content and past-paper MCQ discussions.">
+    <meta name="description" content="Meet Sandun Abeysekara, A/L Physics Educator, and explore his academic background and Physics teaching work.">
     <title>Teacher | SANDUN ABEYSEKARA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Sinhala:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/site-language.js"></script>
 </head>
 <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header"></header>
-    <main id="main-content">
-        <section class="course-hero teacher-profile-hero">
-            <div class="course-hero-grid teacher-profile-grid">
-                <div class="course-intro">
-                    <p class="eyebrow"><span></span> Meet your teacher</p>
-                    <h1 class="teacher-profile-name">SANDUN ABEYSEKARA</h1>
-                    <p class="teacher-role">A/L Physics Educator</p>
-                    <p class="course-lead">I create A/L Physics educational content and past-paper MCQ discussions to support students in their studies.</p>
-                    <div class="course-actions">
-                        <a class="button button-primary" href="index.html#syllabus">Explore Lessons</a>
-                    </div>
-                </div>
-                <figure class="teacher-photo-frame profile-photo">
+    <main id="main-content" class="teacher-page">
+        <section class="teacher-hero" aria-labelledby="teacher-name">
+            <div class="teacher-shell teacher-hero-grid">
+                <figure class="teacher-portrait">
                     <img src="images/sandun-abeysekara.jpg" alt="Portrait of Sandun Abeysekara, A/L Physics Educator">
                 </figure>
-            </div>
-        </section>
-        <section class="resource-section teacher-academics-section" aria-labelledby="academic-profile-heading">
-            <div class="section-shell">
-                <div class="section-heading">
-                    <div>
-                        <p class="eyebrow dark"><span></span> Academic profile</p>
-                        <h2 id="academic-profile-heading">Academic background</h2>
-                    </div>
-                    <p>Currently pursuing undergraduate studies at the University of Sri Jayewardenepura (Japura).</p>
-                </div>
-                <div class="resource-grid teacher-academic-grid">
-                    <article class="resource-card">
-                        <p class="card-index">UNDERGRADUATE STUDIES</p>
-                        <h3>Undergraduate – B.Sc. in Physical Science</h3>
-                        <p>University of Sri Jayewardenepura (Japura)</p>
-                        <p class="card-status">Currently pursuing</p>
-                    </article>
-                    <article class="resource-card">
-                        <p class="card-index">ACADEMIC DISCIPLINES</p>
-                        <h3>Areas of study</h3>
-                        <ul class="teacher-discipline-list">
-                            <li>Physics</li>
-                            <li>Mathematics</li>
-                            <li>Computer Science</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </section>
-        <section class="resource-section teacher-portfolio-section" aria-labelledby="teaching-portfolio-heading">
-            <div class="section-shell">
-                <div class="section-heading">
-                    <div>
-                        <p class="eyebrow dark"><span></span> YouTube teaching portfolio</p>
-                        <h2 id="teaching-portfolio-heading">A/L Physics learning content</h2>
-                    </div>
-                    <p>Educational videos and past-paper discussions created to support A/L Physics students.</p>
-                </div>
-                <div class="resource-grid teacher-portfolio-grid">
-                    <article class="resource-card featured">
-                        <div class="card-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24"><path d="M9 6.5 16 12l-7 5.5z"></path></svg>
+                <div class="teacher-hero-copy">
+                    <p class="teacher-kicker">Teacher Profile</p>
+                    <h1 class="teacher-name" id="teacher-name" lang="si">සඳුන් අබේසේකර</h1>
+                    <p class="teacher-qualification">B.Sc. (UG) | USJ</p>
+                    <p class="teacher-role">A/L PHYSICS EDUCATOR</p>
+                    <p class="teacher-intro">I create A/L Physics educational content and past-paper MCQ discussions to support students in their studies.</p>
+
+                    <div class="teacher-hero-details">
+                        <div class="teacher-detail-item">
+                            <span class="teacher-detail-label">Education</span>
+                            <p>Undergraduate – B.Sc. in Physical Science</p>
+                            <small>University of Sri Jayewardenepura</small>
                         </div>
-                        <p class="card-index">YOUTUBE CHANNEL</p>
-                        <h3>Sandun Abeysekara</h3>
-                        <p>A/L Physics educational content designed to support students.</p>
-                        <p class="card-status">Teaching portfolio</p>
-                    </article>
-                    <article class="resource-card">
-                        <p class="card-index">PAST PAPER PRACTICE</p>
-                        <h3>MCQ discussions</h3>
-                        <p class="teacher-video-stat"><strong>Approximately 450</strong> A/L Physics Past Paper MCQ discussion videos.</p>
-                    </article>
-                    <article class="resource-card">
-                        <p class="card-index">STUDENT FEEDBACK</p>
-                        <h3>Positive responses</h3>
-                        <p>Students have shared positive feedback and comments on the educational content.</p>
-                    </article>
+                        <div class="teacher-detail-item">
+                            <span class="teacher-detail-label">Disciplines</span>
+                            <ul class="teacher-disciplines" aria-label="Academic disciplines">
+                                <li>Physics</li>
+                                <li>Mathematics</li>
+                                <li>Computer Science</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <a class="button button-primary teacher-explore-button" href="index.html#syllabus">
+                        Explore Lessons <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="teacher-youtube-section" aria-labelledby="youtube-profile-heading">
+            <div class="teacher-shell">
+                <div class="teacher-youtube-heading">
+                    <div class="teacher-youtube-copy">
+                        <p class="teacher-kicker">YouTube Teaching</p>
+                        <h2 id="youtube-profile-heading">Physics Lessons &amp; Discussions</h2>
+                        <p>A/L Physics Past Paper MCQ Discussions and other educational content designed to support students.</p>
+                    </div>
+                    <a class="teacher-youtube-all" href="https://youtube.com/@sandunabeyb" target="_blank" rel="noopener noreferrer">
+                        <span class="teacher-channel-play" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M9 6.5 16 12l-7 5.5z"></path></svg>
+                        </span>
+                        Visit YouTube Channel <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+
+                <h3 class="teacher-youtube-subheading">Featured Videos</h3>
+                <div class="teacher-video-grid">
+                    <a class="teacher-youtube-card" href="https://youtu.be/928J1e7E3nI" target="_blank" rel="noopener noreferrer" aria-label="Watch featured video 1 on YouTube">
+                        <span class="teacher-youtube-thumbnail">
+                            <img src="https://i.ytimg.com/vi/928J1e7E3nI/hqdefault.jpg" alt="Featured video 1 thumbnail" loading="lazy">
+                            <span class="teacher-thumbnail-play" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M9 6.5 16 12l-7 5.5z"></path></svg>
+                            </span>
+                        </span>
+                        <span class="teacher-youtube-card-copy">
+                            <span class="teacher-youtube-card-label">Featured Video 01</span>
+                            <span class="teacher-youtube-card-action">Watch on YouTube <span aria-hidden="true">↗</span></span>
+                        </span>
+                    </a>
+                    <a class="teacher-youtube-card" href="https://youtu.be/TTccrVQp_Q4" target="_blank" rel="noopener noreferrer" aria-label="Watch featured video 2 on YouTube">
+                        <span class="teacher-youtube-thumbnail">
+                            <img src="https://i.ytimg.com/vi/TTccrVQp_Q4/hqdefault.jpg" alt="Featured video 2 thumbnail" loading="lazy">
+                            <span class="teacher-thumbnail-play" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M9 6.5 16 12l-7 5.5z"></path></svg>
+                            </span>
+                        </span>
+                        <span class="teacher-youtube-card-copy">
+                            <span class="teacher-youtube-card-label">Featured Video 02</span>
+                            <span class="teacher-youtube-card-action">Watch on YouTube <span aria-hidden="true">↗</span></span>
+                        </span>
+                    </a>
+                </div>
+
+                <section class="teacher-playlist-section" aria-labelledby="teacher-playlist-heading">
+                    <h3 class="teacher-youtube-subheading teacher-playlist-heading" id="teacher-playlist-heading">Physics Video Collections</h3>
+                    <div class="teacher-playlist-grid">
+                        <a class="teacher-youtube-card" href="https://youtube.com/playlist?list=PLorTSZ_7iMvccH9lx0_CTqFFW_OUJViIp" target="_blank" rel="noopener noreferrer" aria-label="Open Physics video playlist 1 on YouTube">
+                            <span class="teacher-youtube-thumbnail">
+                                <img src="https://i.ytimg.com/vi/2D2-VPgWiBQ/hqdefault.jpg" alt="Physics video playlist 1 thumbnail" loading="lazy">
+                                <span class="teacher-playlist-badge" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><rect x="4" y="5" width="13" height="15" rx="2"></rect><path d="M8 3h10a2 2 0 0 1 2 2v12"></path><path d="m9 10 4 2.5L9 15z"></path></svg>
+                                    <span>Playlist</span>
+                                </span>
+                                <span class="teacher-thumbnail-play" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M9 6.5 16 12l-7 5.5z"></path></svg>
+                                </span>
+                            </span>
+                            <span class="teacher-youtube-card-copy">
+                                <span class="teacher-youtube-card-label">Playlist 01</span>
+                                <span class="teacher-youtube-card-action">Open Playlist <span aria-hidden="true">↗</span></span>
+                            </span>
+                        </a>
+                        <a class="teacher-youtube-card" href="https://youtube.com/playlist?list=PLorTSZ_7iMvcBsT5GqCTFAwssuSsdzVM-" target="_blank" rel="noopener noreferrer" aria-label="Open Physics video playlist 2 on YouTube">
+                            <span class="teacher-youtube-thumbnail">
+                                <img src="https://i.ytimg.com/vi/9YuomSnon9w/hqdefault.jpg" alt="Physics video playlist 2 thumbnail" loading="lazy">
+                                <span class="teacher-playlist-badge" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><rect x="4" y="5" width="13" height="15" rx="2"></rect><path d="M8 3h10a2 2 0 0 1 2 2v12"></path><path d="m9 10 4 2.5L9 15z"></path></svg>
+                                    <span>Playlist</span>
+                                </span>
+                                <span class="teacher-thumbnail-play" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M9 6.5 16 12l-7 5.5z"></path></svg>
+                                </span>
+                            </span>
+                            <span class="teacher-youtube-card-copy">
+                                <span class="teacher-youtube-card-label">Playlist 02</span>
+                                <span class="teacher-youtube-card-action">Open Playlist <span aria-hidden="true">↗</span></span>
+                            </span>
+                        </a>
+                        <a class="teacher-youtube-card" href="https://youtube.com/playlist?list=PLorTSZ_7iMvemeBYDQ80dlYxzRSjpHk3j" target="_blank" rel="noopener noreferrer" aria-label="Open Physics video playlist 3 on YouTube">
+                            <span class="teacher-youtube-thumbnail">
+                                <img src="https://i.ytimg.com/vi/JfSlJ64TjRE/hqdefault.jpg" alt="Physics video playlist 3 thumbnail" loading="lazy">
+                                <span class="teacher-playlist-badge" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><rect x="4" y="5" width="13" height="15" rx="2"></rect><path d="M8 3h10a2 2 0 0 1 2 2v12"></path><path d="m9 10 4 2.5L9 15z"></path></svg>
+                                    <span>Playlist</span>
+                                </span>
+                                <span class="teacher-thumbnail-play" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M9 6.5 16 12l-7 5.5z"></path></svg>
+                                </span>
+                            </span>
+                            <span class="teacher-youtube-card-copy">
+                                <span class="teacher-youtube-card-label">Playlist 03</span>
+                                <span class="teacher-youtube-card-action">Open Playlist <span aria-hidden="true">↗</span></span>
+                            </span>
+                        </a>
+                        <a class="teacher-youtube-card" href="https://youtube.com/playlist?list=PLorTSZ_7iMvfQmzWj4-HaS_VLkpM0KOUY" target="_blank" rel="noopener noreferrer" aria-label="Open Physics video playlist 4 on YouTube">
+                            <span class="teacher-youtube-thumbnail">
+                                <img src="https://i.ytimg.com/vi/--mzcsvFKNU/hqdefault.jpg" alt="Physics video playlist 4 thumbnail" loading="lazy">
+                                <span class="teacher-playlist-badge" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><rect x="4" y="5" width="13" height="15" rx="2"></rect><path d="M8 3h10a2 2 0 0 1 2 2v12"></path><path d="m9 10 4 2.5L9 15z"></path></svg>
+                                    <span>Playlist</span>
+                                </span>
+                                <span class="teacher-thumbnail-play" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M9 6.5 16 12l-7 5.5z"></path></svg>
+                                </span>
+                            </span>
+                            <span class="teacher-youtube-card-copy">
+                                <span class="teacher-youtube-card-label">Playlist 04</span>
+                                <span class="teacher-youtube-card-action">Open Playlist <span aria-hidden="true">↗</span></span>
+                            </span>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <section class="teacher-profile-section teacher-shell" aria-labelledby="teaching-profile-heading">
+            <div class="teacher-section-heading">
+                <p class="teacher-kicker">Teaching Profile</p>
+                <h2 id="teaching-profile-heading">A clear, syllabus-focused approach</h2>
+            </div>
+            <div class="teacher-profile-cards">
+                <article class="teacher-profile-card">
+                    <span class="teacher-card-number">01</span>
+                    <h3>Teaching Philosophy</h3>
+                    <p>Clear, syllabus-focused explanations help students build their understanding of Physics step by step.</p>
+                </article>
+                <article class="teacher-profile-card">
+                    <span class="teacher-card-number">02</span>
+                    <h3>Subjects &amp; Expertise</h3>
+                    <p>Academic disciplines include Physics, Mathematics and Computer Science. The teaching portfolio focuses on A/L Physics.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="teacher-academic-section" aria-labelledby="academic-profile-heading">
+            <div class="teacher-shell">
+                <div class="teacher-section-heading teacher-academic-heading">
+                    <p class="teacher-kicker">Academic Profile</p>
+                    <h2 id="academic-profile-heading">Academic Background</h2>
+                </div>
+                <div class="teacher-academic-card">
+                    <span class="teacher-detail-label">Undergraduate Studies</span>
+                    <div>
+                        <h3>Undergraduate – B.Sc. in Physical Science</h3>
+                        <p>Currently pursuing undergraduate studies at the University of Sri Jayewardenepura (Japura).</p>
+                    </div>
+                    <ul class="teacher-disciplines" aria-label="Academic disciplines">
+                        <li>Physics</li>
+                        <li>Mathematics</li>
+                        <li>Computer Science</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="teacher-experience-section" aria-labelledby="teacher-experience-heading">
+            <div class="teacher-shell">
+                <div class="teacher-section-heading">
+                    <p class="teacher-kicker">Teaching Experience</p>
+                    <h2 id="teacher-experience-heading">A/L Physics Teaching Work</h2>
+                </div>
+                <div class="teacher-experience-card">
+                    <p>A/L Physics educational content and past-paper MCQ discussions are created to support students in their studies.</p>
                 </div>
             </div>
         </section>

@@ -20,7 +20,10 @@ function applyColorTheme(themeId, savePreference) {
 
     const currentThemeLabel = document.querySelector("[data-theme-current]");
     if (currentThemeLabel) {
-        currentThemeLabel.textContent = selectedTheme.name;
+        const translatedName = typeof window.dashboardI18n === "function"
+            ? window.dashboardI18n("theme-" + selectedTheme.id)
+            : "";
+        currentThemeLabel.textContent = translatedName || selectedTheme.name;
     }
 
     const triggerSwatches = document.querySelectorAll(".theme-trigger-swatches i");

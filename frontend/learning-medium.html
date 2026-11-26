@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Choose your A/L Physics learning medium.">
+    <title>Choose Learning Medium | SANDUN ABEYSEKARA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/site-language.js"></script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header"></header>
+    <main id="main-content">
+        <section class="course-hero">
+            <div class="course-hero-grid">
+                <div class="course-intro">
+                    <p class="eyebrow"><span></span> YOUR STUDENT ACCOUNT</p>
+                    <h1>Choose your learning medium</h1>
+                    <p class="course-lead">Select the medium you want to use for your A/L Physics learning space. You can change this later in your profile.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="student-auth-section" aria-labelledby="learning-medium-heading">
+            <div class="section-shell student-auth-layout">
+                <aside class="student-auth-intro">
+                    <p class="student-auth-kicker">ONE REQUIRED CHOICE</p>
+                    <h2 id="learning-medium-heading">Your learning space, your medium.</h2>
+                    <p>Your selection is saved to your own student profile. Choose one option to continue to the dashboard.</p>
+                </aside>
+
+                <section class="student-auth-panel" aria-labelledby="learning-medium-panel-heading">
+                    <div class="student-auth-panel-heading">
+                        <p class="student-auth-kicker">LEARNING PREFERENCE</p>
+                        <h2 id="learning-medium-panel-heading">Select a medium</h2>
+                        <p>This setting can be changed at any time from your profile.</p>
+                    </div>
+                    <p class="student-auth-status" id="learning-medium-status" role="status" aria-live="polite" aria-atomic="true">Checking your account...</p>
+                    <form id="learning-medium-form" class="student-auth-form" hidden>
+                        <div class="student-auth-field">
+                            <label for="learning-medium-choice">Learning medium</label>
+                            <select id="learning-medium-choice" name="learning_medium" required disabled>
+                                <option value="" selected disabled>Choose your learning medium</option>
+                                <option value="si">Sinhala Medium (සිංහල මාධ්‍යය)</option>
+                                <option value="en">English Medium</option>
+                                <option value="ta">Tamil Medium (தமிழ் மூலம்)</option>
+                            </select>
+                        </div>
+                        <button class="student-auth-submit" type="submit" disabled>
+                            <span data-submit-label>Save and continue</span>
+                            <span class="student-auth-spinner" aria-hidden="true" hidden></span>
+                        </button>
+                    </form>
+                </section>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <script src="js/site-shell.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-client.js"></script>
+    <script src="js/learning-medium.js"></script>
+    <script src="js/color-themes.js"></script>
+</body>
+</html>

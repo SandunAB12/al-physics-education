@@ -1,6 +1,7 @@
 (() => {
     const themeGroups = [
         {
+            id: "soft",
             name: "Soft & Pretty",
             themes: [
                 { id: "pink-blossom", name: "Pink Blossom", swatches: ["#FFF3F7", "#682D4B", "#D95F91"] },
@@ -11,6 +12,7 @@
             ]
         },
         {
+            id: "bold",
             name: "Bold & Modern",
             themes: [
                 { id: "hot-pink-pop", name: "Hot Pink Pop", swatches: ["#FFF8FC", "#190D16", "#F00078"] },
@@ -21,6 +23,7 @@
             ]
         },
         {
+            id: "fresh",
             name: "Fresh & Motivational",
             themes: [
                 { id: "avocado-fresh", name: "Avocado Fresh", swatches: ["#F7F5E9", "#34351F", "#89952E"] },
@@ -31,6 +34,7 @@
             ]
         },
         {
+            id: "elegant",
             name: "Elegant & Universal",
             themes: [
                 { id: "royal-navy", name: "Royal Navy", swatches: ["#F1F4F8", "#15243A", "#315D91"] },
@@ -43,15 +47,15 @@
     window.sandunThemeGroups = themeGroups;
 
     const themeOptions = themeGroups.map((group) => `
-        <section class="theme-group" aria-label="${group.name}">
-            <h3>${group.name}</h3>
+        <section class="theme-group" aria-label="${group.name}" data-i18n-aria-label="themeGroup-${group.id}">
+            <h3 data-i18n="themeGroup-${group.id}">${group.name}</h3>
             <div class="theme-option-list">
                 ${group.themes.map((theme) => `
                     <button class="theme-option" type="button" data-theme-choice="${theme.id}" aria-pressed="false">
                         <span class="theme-swatches" aria-hidden="true">
                             ${theme.swatches.map((color) => `<span style="--swatch-color:${color}"></span>`).join("")}
                         </span>
-                        <span>${theme.name}</span>
+                        <span data-i18n="theme-${theme.id}">${theme.name}</span>
                     </button>`).join("")}
             </div>
         </section>`).join("");
@@ -60,29 +64,29 @@
     const header = document.querySelector(".site-header");
     if (header) {
         header.innerHTML = `
-            <nav class="navbar" aria-label="Main navigation">
-                <a class="brand" href="index.html" aria-label="SANDUN ABEYSEKARA home">
+            <nav class="navbar" aria-label="Main navigation" data-i18n-aria-label="mainNavigation">
+                <a class="brand" href="index.html" aria-label="SANDUN ABEYSEKARA home" data-i18n-aria-label="brandHomeAria">
                     <span class="brand-mark">S</span>
                     <span>SANDUN <strong>ABEYSEKARA</strong></span>
                 </a>
                 <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
-                    <span></span><span></span><span></span><span class="sr-only">Toggle menu</span>
+                    <span></span><span></span><span></span><span class="sr-only" data-i18n="menuToggle">Toggle menu</span>
                 </button>
-                <ul class="nav-links" id="nav-links">
-                    <li><a${page === "index.html" ? ' class="active" aria-current="page"' : ""} href="index.html">Home</a></li>
-                    <li><a${page === "dashboard.html" ? ' class="active" aria-current="page"' : ""} href="dashboard.html">Dashboard</a></li>
-                    <li><a${page === "teacher.html" ? ' class="active" aria-current="page"' : ""} href="teacher.html">Teacher</a></li>
-                    <li><a${page === "contact.html" ? ' class="active" aria-current="page"' : ""} href="contact.html">Contact</a></li>
-                    <li><a${page === "login.html" ? ' class="active" aria-current="page"' : ""} href="login.html">Login</a></li>
+                <ul class="nav-links" id="nav-links" aria-label="Main navigation" data-i18n-aria-label="mainNavigation">
+                    <li><a${page === "index.html" ? ' class="active" aria-current="page"' : ""} href="index.html" data-i18n="navHome">Home</a></li>
+                    <li><a${page === "dashboard.html" ? ' class="active" aria-current="page"' : ""} href="dashboard.html" data-i18n="navDashboard">Dashboard</a></li>
+                    <li><a${page === "teacher.html" ? ' class="active" aria-current="page"' : ""} href="teacher.html" data-i18n="navTeacher">Teacher</a></li>
+                    <li><a${page === "contact.html" ? ' class="active" aria-current="page"' : ""} href="contact.html" data-i18n="navContact">Contact</a></li>
+                    <li><a${page === "login.html" ? ' class="active" aria-current="page"' : ""} href="login.html" data-i18n="navLogin">Login</a></li>
                     <li class="theme-control">
                         <details class="theme-picker">
-                            <summary class="theme-trigger" aria-label="Choose a color theme">
+                            <summary class="theme-trigger" aria-label="Choose a color theme" data-i18n-aria-label="themePickerAria">
                                 <span class="theme-trigger-swatches" aria-hidden="true"><i></i><i></i><i></i></span>
                                 <span data-theme-current>Hot Pink Pop</span>
                                 <span class="theme-trigger-chevron" aria-hidden="true"></span>
                             </summary>
                             <div class="theme-menu">
-                                <p class="theme-menu-title">Choose your color theme</p>
+                                <p class="theme-menu-title" data-i18n="themeMenuTitle">Choose your color theme</p>
                                 ${themeOptions}
                             </div>
                         </details>
@@ -94,17 +98,17 @@
     const footer = document.querySelector(".site-footer");
     if (footer) {
         footer.innerHTML = `
-            <a class="brand footer-brand" href="index.html" aria-label="SANDUN ABEYSEKARA home">
+            <a class="brand footer-brand" href="index.html" aria-label="SANDUN ABEYSEKARA home" data-i18n-aria-label="brandHomeAria">
                 <span class="brand-mark">S</span>
                 <span>SANDUN <strong>ABEYSEKARA</strong></span>
             </a>
-            <div class="footer-links" aria-label="Footer navigation">
-                <a href="index.html">Home</a>
-                <a href="dashboard.html">Dashboard</a>
-                <a href="teacher.html">Teacher</a>
-                <a href="contact.html">Contact</a>
+            <div class="footer-links" aria-label="Footer navigation" data-i18n-aria-label="footerNavigation">
+                <a href="index.html" data-i18n="navHome">Home</a>
+                <a href="dashboard.html" data-i18n="navDashboard">Dashboard</a>
+                <a href="teacher.html" data-i18n="navTeacher">Teacher</a>
+                <a href="contact.html" data-i18n="navContact">Contact</a>
             </div>
-            <p>A/L PHYSICS EDUCATION · © 2026 SANDUN ABEYSEKARA</p>`;
+            <p data-i18n="footerTagline">A/L PHYSICS EDUCATION · © 2026 SANDUN ABEYSEKARA</p>`;
     }
 
     const menuToggle = document.querySelector(".menu-toggle");

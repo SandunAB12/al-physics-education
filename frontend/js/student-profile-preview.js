@@ -16,7 +16,13 @@
     const displayNameInput = document.querySelector("#profile-display-name");
     const schoolInput = document.querySelector("#profile-school");
     const gradeInput = document.querySelector("#profile-grade");
+    const learningMediumInput = document.querySelector("#profile-learning-medium");
     const aboutInput = document.querySelector("#profile-about");
+    const learningMediumLabels = new Map([
+        ["si", "Sinhala Medium"],
+        ["en", "English Medium"],
+        ["ta", "Tamil Medium"]
+    ]);
     const storageBucketName = "student-avatars";
     const maxPhotoBytes = 5 * 1024 * 1024;
     const mimeTypesByExtension = new Map([
@@ -26,7 +32,7 @@
         ["webp", "image/webp"]
     ]);
     const signedUrlExpirySeconds = 60 * 60;
-    const profileColumns = "id, full_name, display_name, school, grade, bio, avatar_url, updated_at";
+    const profileColumns = "id, full_name, display_name, school, grade, bio, avatar_url, learning_medium, updated_at";
     let userId = "";
     let profileExists = false;
     let savedProfile = {
@@ -35,7 +41,8 @@
         school: "",
         grade: "",
         bio: "",
-        avatar_url: null
+        avatar_url: null,
+        learning_medium: ""
     };
     let currentAvatarPath = "";
     let currentSignedAvatarUrl = "";
@@ -150,6 +157,8 @@
             schoolInput.value.trim() || "Not provided";
         document.querySelector("#profile-preview-grade").textContent =
             gradeInput.value.trim() || "Not provided";
+        document.querySelector("#profile-preview-learning-medium").textContent =
+            learningMediumLabels.get(learningMediumInput.value) || "Not selected";
         document.querySelector("#profile-preview-about").textContent =
             aboutInput.value.trim() || "Your short introduction will appear here.";
     }
@@ -197,7 +206,10 @@
             school: data.school || "",
             grade: data.grade || "",
             bio: data.bio || "",
-            avatar_url: data.avatar_url || null
+            avatar_url: data.avatar_url || null,
+            learning_medium: learningMediumLabels.has(data.learning_medium)
+                ? data.learning_medium
+                : ""
         };
         profileExists = Boolean(profile);
         currentAvatarPath = savedProfile.avatar_url || "";
@@ -206,6 +218,7 @@
         displayNameInput.value = savedProfile.display_name;
         schoolInput.value = savedProfile.school;
         gradeInput.value = savedProfile.grade;
+        learningMediumInput.value = savedProfile.learning_medium;
         aboutInput.value = savedProfile.bio;
         removeAvatarRequested = false;
         discardPendingPhoto();
@@ -454,6 +467,11 @@
             setProfileIndicator("SAVE BLOCKED");
             return;
         }
+        if (!learningMediumLabels.has(learningMediumInput.value)) {
+            setSaveStatus("Choose a learning medium before saving your profile.", "error");
+            learningMediumInput.focus();
+            return;
+        }
 
         setEditorDisabled(true);
         setSavingState(true);
@@ -499,6 +517,7 @@
                 school: schoolInput.value.trim() || null,
                 grade: gradeInput.value.trim() || null,
                 bio: aboutInput.value.trim() || null,
+                learning_medium: learningMediumInput.value,
                 avatar_url: targetAvatarPath,
                 updated_at: new Date().toISOString()
             };
@@ -509,10 +528,16 @@
                 throw new Error("Supabase did not confirm the write for the signed-in user's profile.");
             }
             writeConfirmed = true;
+            if (saved.learning_medium !== payload.learning_medium) {
+                throw new Error("The saved profile row did not contain the selected learning medium.");
+            }
             if ((saved.avatar_url || null) !== targetAvatarPath) {
                 throw new Error("The saved profile row did not contain the expected private photo path.");
             }
             const reloaded = await loadProfile(client, userId, true);
+            if (!reloaded || reloaded.learning_medium !== payload.learning_medium) {
+                throw new Error("The profile reload did not confirm the selected learning medium.");
+            }
             if (!reloaded || (reloaded.avatar_url || null) !== targetAvatarPath) {
                 throw new Error("The profile reload did not confirm the saved private photo path.");
             }

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Temporary comparison of Maname, Abhaya Libre, and Noto Serif Sinhala for the Teacher Profile name.">
+    <title>Temporary Sinhala Typography Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        id="preview-fonts"
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400&family=Maname&family=Noto+Serif+Sinhala:wght@400&display=swap">
+    <style>
+        :root {
+            color-scheme: light;
+            font-family: Inter, "Segoe UI", Arial, sans-serif;
+            color: #281c25;
+            background: #f5f2f4;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        main {
+            width: min(1420px, calc(100% - 40px));
+            margin: 0 auto;
+            padding: clamp(32px, 6vw, 72px) 0;
+        }
+
+        .preview-header {
+            margin-bottom: 32px;
+        }
+
+        .preview-eyebrow {
+            margin: 0 0 9px;
+            color: #86556f;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 500;
+            line-height: 1.15;
+        }
+
+        .preview-note {
+            max-width: 720px;
+            margin: 12px 0 0;
+            color: #655b62;
+            font-size: 14px;
+            line-height: 1.65;
+        }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            align-items: stretch;
+        }
+
+        .preview-card {
+            min-width: 0;
+            min-height: 280px;
+            padding: 22px 18px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e6dce2;
+            border-radius: 14px;
+            background: #fff;
+            box-shadow: 0 14px 34px rgba(43, 26, 37, 0.07);
+        }
+
+        .preview-font-name {
+            margin: 0;
+            color: #6e5261;
+            font-size: 13px;
+            font-weight: 750;
+            letter-spacing: 0.03em;
+        }
+
+        .preview-card[data-font="Maname"] {
+            --preview-font: "Maname";
+        }
+
+        .preview-card[data-font="Abhaya Libre"] {
+            --preview-font: "Abhaya Libre";
+        }
+
+        .preview-card[data-font="Noto Serif Sinhala"] {
+            --preview-font: "Noto Serif Sinhala";
+        }
+
+        .preview-name {
+            margin: 28px 0 0;
+            color: #321423;
+            font-family: var(--preview-font);
+            font-size: clamp(44px, 4.6vw, 64px);
+            font-weight: 400;
+            letter-spacing: 0;
+            line-height: 1.55;
+            overflow-wrap: anywhere;
+        }
+
+        .preview-qualification {
+            margin: 12px 0 0;
+            color: #765b68;
+            font-size: 15px;
+            font-weight: 650;
+            letter-spacing: 0.02em;
+            line-height: 1.5;
+        }
+
+        .preview-font-status {
+            margin: auto 0 0;
+            padding-top: 24px;
+            color: #356847;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .preview-card[data-font-state="loading"] .preview-name,
+        .preview-card[data-font-state="loading"] .preview-qualification,
+        .preview-card[data-font-state="error"] .preview-name,
+        .preview-card[data-font-state="error"] .preview-qualification {
+            visibility: hidden;
+        }
+
+        .preview-card[data-font-state="error"] {
+            border-color: #b42318;
+        }
+
+        .preview-card[data-font-state="error"] .preview-font-status {
+            color: #b42318;
+        }
+
+        @media (max-width: 900px) {
+            .preview-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .preview-card {
+                min-height: 0;
+            }
+
+            .preview-name {
+                font-size: clamp(48px, 9vw, 64px);
+            }
+
+            .preview-font-status {
+                padding-top: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header class="preview-header">
+            <p class="preview-eyebrow">Temporary typography preview</p>
+            <h1>Sinhala Display Font Comparison</h1>
+            <p class="preview-note">The same name and qualification are shown with identical size, weight, color, and spacing. A sample is revealed only after its named font loads successfully.</p>
+        </header>
+
+        <section class="preview-grid" aria-label="Sinhala font samples">
+            <article class="preview-card" data-font="Maname" data-font-state="loading" aria-busy="true">
+                <h2 class="preview-font-name">Maname</h2>
+                <p class="preview-name" lang="si">සඳුන් අබේසේකර</p>
+                <p class="preview-qualification">B.Sc. (UG) | USJ</p>
+                <p class="preview-font-status" role="status" aria-live="polite">Loading Maname…</p>
+            </article>
+            <article class="preview-card" data-font="Abhaya Libre" data-font-state="loading" aria-busy="true">
+                <h2 class="preview-font-name">Abhaya Libre</h2>
+                <p class="preview-name" lang="si">සඳුන් අබේසේකර</p>
+                <p class="preview-qualification">B.Sc. (UG) | USJ</p>
+                <p class="preview-font-status" role="status" aria-live="polite">Loading Abhaya Libre…</p>
+            </article>
+            <article class="preview-card" data-font="Noto Serif Sinhala" data-font-state="loading" aria-busy="true">
+                <h2 class="preview-font-name">Noto Serif Sinhala</h2>
+                <p class="preview-name" lang="si">සඳුන් අබේසේකර</p>
+                <p class="preview-qualification">B.Sc. (UG) | USJ</p>
+                <p class="preview-font-status" role="status" aria-live="polite">Loading Noto Serif Sinhala…</p>
+            </article>
+        </section>
+    </main>
+    <script>
+        (async () => {
+            const fontStylesheet = document.querySelector("#preview-fonts");
+            if (document.readyState !== "complete") {
+                await new Promise((resolve) => window.addEventListener("load", resolve, { once: true }));
+            }
+            if (!fontStylesheet.sheet) {
+                throw new Error("The font stylesheet did not load.");
+            }
+
+            const sample = "සඳුන් අබේසේකර";
+            const cards = document.querySelectorAll(".preview-card");
+            await Promise.all(Array.from(cards, async (card) => {
+                const font = card.dataset.font;
+                const status = card.querySelector(".preview-font-status");
+                const fontSpec = `400 64px "${font}"`;
+
+                try {
+                    const loadedFaces = await document.fonts.load(fontSpec, sample);
+                    const exactFaceLoaded = Array.from(document.fonts).some((face) =>
+                        face.family.replace(/['"]/g, "") === font && face.status === "loaded"
+                    );
+                    if (!loadedFaces.length || !exactFaceLoaded || !document.fonts.check(fontSpec, sample)) {
+                        throw new Error(`${font} did not load as a registered font face.`);
+                    }
+
+                    card.dataset.fontState = "ready";
+                    card.setAttribute("aria-busy", "false");
+                    status.textContent = `${font} loaded`;
+                } catch (error) {
+                    card.dataset.fontState = "error";
+                    card.setAttribute("aria-busy", "false");
+                    status.textContent = `${font} failed to load; sample hidden.`;
+                    console.error(`Could not load the ${font} preview font.`, error);
+                }
+            }));
+        })().catch((error) => {
+            document.querySelectorAll(".preview-card").forEach((card) => {
+                card.dataset.fontState = "error";
+                card.setAttribute("aria-busy", "false");
+                card.querySelector(".preview-font-status").textContent = "Font stylesheet failed to load; sample hidden.";
+            });
+            console.error("Could not load the Sinhala font comparison stylesheet.", error);
+        });
+    </script>
+</body>
+</html>

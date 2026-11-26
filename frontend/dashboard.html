@@ -3,58 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore the A/L Physics syllabus, lessons and learning resources in the Sandun Abeysekara student dashboard.">
+    <meta name="description" content="Explore the A/L Physics syllabus, lessons and learning resources in the Sandun Abeysekara student dashboard." data-i18n-content="documentDescription">
     <title>Student Dashboard | SANDUN ABEYSEKARA</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <a class="skip-link" href="#main-content" data-i18n="skipMain">Skip to main content</a>
     <header class="site-header"></header>
-    <main id="main-content" class="dashboard-page learning-dashboard">
+    <p class="student-auth-status medium-access-status" id="medium-access-status" role="status" aria-live="polite" data-i18n="statusChecking">Checking your learning medium...</p>
+    <a class="medium-access-retry" id="medium-access-retry" href="learning-medium.html" data-i18n="statusRetry" hidden>Retry learning-medium verification</a>
+    <main id="main-content" data-student-dashboard class="dashboard-page learning-dashboard" hidden>
         <div class="ld-layout">
-            <aside class="ld-sidebar" aria-label="Student dashboard navigation">
-                <p class="ld-sidebar-label">YOUR LEARNING SPACE</p>
-                <nav aria-label="Dashboard sections">
-                    <a class="ld-nav-link active" href="#overview" aria-current="page"><span aria-hidden="true">⌂</span> Overview</a>
-                    <a class="ld-nav-link" href="#my-learning"><span aria-hidden="true">◎</span> My learning</a>
-                    <a class="ld-nav-link" href="#learning-resources"><span aria-hidden="true">▤</span> Resources</a>
-                    <a class="ld-nav-link" href="#my-progress"><span aria-hidden="true">↗</span> My progress</a>
-                    <a class="ld-nav-link" href="#quick-access"><span aria-hidden="true">✦</span> Quick access</a>
-                    <a class="ld-nav-link" href="profile.html"><span aria-hidden="true">♙</span> My Profile</a>
+            <aside class="ld-sidebar" aria-label="Student dashboard navigation" data-i18n-aria-label="sidebarNavigation">
+                <p class="ld-sidebar-label" data-i18n="sidebarLabel">YOUR LEARNING SPACE</p>
+                <nav aria-label="Dashboard sections" data-i18n-aria-label="dashboardSections">
+                    <a class="ld-nav-link active" href="#overview" aria-current="page" data-i18n-text="navOverview"><span aria-hidden="true">⌂</span> Overview</a>
+                    <a class="ld-nav-link" href="#my-learning" data-i18n-text="navMyLearning"><span aria-hidden="true">◎</span> My learning</a>
+                    <a class="ld-nav-link" href="#learning-resources" data-i18n-text="navResources"><span aria-hidden="true">▤</span> Resources</a>
+                    <a class="ld-nav-link" href="#my-progress" data-i18n-text="navProgress"><span aria-hidden="true">↗</span> My progress</a>
+                    <a class="ld-nav-link" href="#quick-access" data-i18n-text="navQuickAccess"><span aria-hidden="true">✦</span> Quick access</a>
+                    <a class="ld-nav-link" href="profile.html" data-i18n-text="navProfile"><span aria-hidden="true">♙</span> My Profile</a>
                 </nav>
 
                 <div class="ld-profile-card" id="student-profile">
                     <div class="ld-profile-avatar" aria-hidden="true">
                         <svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="8" r="3"></circle><path d="M5 20c0-3.3 2.8-6 7-6s7 2.7 7 6"></path></svg>
                     </div>
-                    <p>STUDENT PROFILE</p>
-                    <strong>Profile not personalized</strong>
-                    <span>Profile details are not yet connected to your account.</span>
-                    <a href="profile.html">View profile preview <span aria-hidden="true">→</span></a>
-                    <a href="profile.html#edit-profile">Edit profile <span aria-hidden="true">→</span></a>
-                    <a href="login.html">Login information <span aria-hidden="true">→</span></a>
+                    <p data-i18n="profileLabel">STUDENT PROFILE</p>
+                    <strong data-i18n="profileNotPersonalized">Profile not personalized</strong>
+                    <span data-i18n="profileNotConnected">Profile details are not yet connected to your account.</span>
+                    <a href="profile.html"><span data-i18n="profilePreviewLink">View profile preview</span> <span aria-hidden="true">→</span></a>
+                    <a href="profile.html#edit-profile"><span data-i18n="profileEditLink">Edit profile</span> <span aria-hidden="true">→</span></a>
+                    <a href="login.html"><span data-i18n="profileLoginLink">Login information</span> <span aria-hidden="true">→</span></a>
                 </div>
-                <p class="ld-sidebar-footnote"><span aria-hidden="true"></span> Preview mode · progress isn't connected</p>
+                <p class="ld-sidebar-footnote" data-i18n-text="previewFootnote"><span aria-hidden="true"></span> Preview mode · progress isn't connected</p>
             </aside>
 
             <div class="ld-content">
                 <section class="ld-hero" id="overview" aria-labelledby="dashboard-heading">
                     <div class="ld-hero-copy">
-                        <p class="ld-eyebrow"><span aria-hidden="true"></span> SANDUN ABEYSEKARA · A/L PHYSICS EDUCATION</p>
-                        <h1 id="dashboard-heading">Welcome, <span>Physics learner!</span></h1>
-                        <p>Curiosity is your superpower. Explore the syllabus, discover a new idea and build your confidence one lesson at a time.</p>
+                        <p class="ld-eyebrow" data-i18n-text="brandEyebrow"><span aria-hidden="true"></span> SANDUN ABEYSEKARA · A/L PHYSICS EDUCATION</p>
+                        <h1 id="dashboard-heading" data-i18n-text="welcomePrefix">Welcome, <span data-i18n="welcomeLearner">Physics learner!</span></h1>
+                        <p data-i18n="welcomeDescription">Curiosity is your superpower. Explore the syllabus, discover a new idea and build your confidence one lesson at a time.</p>
                         <div class="ld-hero-actions">
-                            <a class="ld-button ld-button-primary" href="#my-learning">Explore the syllabus <span aria-hidden="true">→</span></a>
-                            <a class="ld-hero-text-link" href="class-home.html#lessons">Browse class index</a>
+                            <a class="ld-button ld-button-primary" href="#my-learning"><span data-i18n="welcomeExplore">Explore the syllabus</span> <span aria-hidden="true">→</span></a>
+                            <a class="ld-hero-text-link" href="class-home.html#lessons" data-i18n="welcomeBrowse">Browse class index</a>
                         </div>
                         <div class="ld-welcome-profile">
                             <span class="ld-welcome-avatar" aria-hidden="true">
                                 <svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="8" r="3"></circle><path d="M5 20c0-3.3 2.8-6 7-6s7 2.7 7 6"></path></svg>
                             </span>
-                            <span class="ld-welcome-profile-copy"><strong>Profile not personalized</strong><small>Your photo and display name are not connected yet.</small></span>
-                            <a href="profile.html#edit-profile">Edit profile <span aria-hidden="true">→</span></a>
+                            <span class="ld-welcome-profile-copy"><strong data-i18n="profileNotPersonalized">Profile not personalized</strong><small data-i18n="welcomeProfileDetails">Your photo and display name are not connected yet.</small></span>
+                            <a href="profile.html#edit-profile"><span data-i18n="profileEditLink">Edit profile</span> <span aria-hidden="true">→</span></a>
                         </div>
-                        <p class="ld-preview-label"><span aria-hidden="true">i</span> Preview mode: personal activity is not stored on this website.</p>
+                        <p class="ld-preview-label" data-i18n-text="previewNotice"><span aria-hidden="true">i</span> Preview mode: personal activity is not stored on this website.</p>
                     </div>
                     <div class="ld-hero-art" aria-hidden="true">
                         <div class="ld-orbit ld-orbit-one"></div>
@@ -70,217 +72,328 @@
                         </div>
                         <span class="ld-formula ld-formula-one">F = ma</span>
                         <span class="ld-formula ld-formula-two">E = mc²</span>
-                        <span class="ld-hero-sticker">THINK<br>CURIOUSLY</span>
+                        <span class="ld-hero-sticker"><span data-i18n="heroStickerLine1">THINK</span><br><span data-i18n="heroStickerLine2">CURIOUSLY</span></span>
                     </div>
                 </section>
 
                 <section class="ld-section ld-continue-section" aria-labelledby="continue-heading">
                     <div class="ld-section-heading">
                         <div>
-                            <p class="ld-section-kicker">A GOOD PLACE TO BEGIN</p>
-                            <h2 id="continue-heading">Continue learning</h2>
+                            <p class="ld-section-kicker" data-i18n="continueKicker">A GOOD PLACE TO BEGIN</p>
+                            <h2 id="continue-heading" data-i18n="continueHeading">Continue learning</h2>
                         </div>
-                        <span class="ld-heading-note">No saved lesson activity yet</span>
+                        <span class="ld-heading-note" data-i18n="noSavedActivity">No saved lesson activity yet</span>
                     </div>
                     <a class="ld-continue-card" href="measurement.html">
                         <span class="ld-continue-icon" aria-hidden="true">
                             <svg viewBox="0 0 48 48" focusable="false"><path d="M9 34 33 10l6 6-24 24H9z"></path><path d="m27 16 5 5M22 21l5 5M17 26l5 5M12 31l5 5"></path></svg>
                         </span>
                         <span class="ld-continue-copy">
-                            <span class="ld-continue-kicker">YOUR FIRST STEP · UNIT 01</span>
-                            <strong>Start with Measurement</strong>
-                            <span>Explore physical quantities, SI units, dimensions and uncertainty.</span>
-                            <span class="ld-continue-action">Open the lesson <span aria-hidden="true">→</span></span>
+                            <span class="ld-continue-kicker" data-i18n="continueFirstStep">YOUR FIRST STEP · UNIT 01</span>
+                            <strong data-i18n="continueMeasurement">Start with Measurement</strong>
+                            <span data-i18n="continueMeasurementDescription">Explore physical quantities, SI units, dimensions and uncertainty.</span>
+                            <span class="ld-continue-action"><span data-i18n="openLesson">Open the lesson</span> <span aria-hidden="true">→</span></span>
                         </span>
-                        <span class="ld-continue-side"><span aria-hidden="true">01</span><small>A/L PHYSICS</small></span>
+                        <span class="ld-continue-side"><span aria-hidden="true">01</span><small data-i18n="alPhysics">A/L PHYSICS</small></span>
                     </a>
                 </section>
 
                 <section class="ld-section" id="my-learning" aria-labelledby="my-learning-heading">
                     <div class="ld-section-heading">
                         <div>
-                            <p class="ld-section-kicker">11 UNITS · ONE BIG SUBJECT</p>
-                            <h2 id="my-learning-heading">Explore your syllabus</h2>
+                            <p class="ld-section-kicker" data-i18n="syllabusKicker">11 UNITS · ONE BIG SUBJECT</p>
+                            <h2 id="my-learning-heading" data-i18n="syllabusHeading">Explore your syllabus</h2>
                         </div>
-                        <a class="ld-inline-link" href="class-home.html#lessons">Browse all classes <span aria-hidden="true">→</span></a>
+                        <a class="ld-inline-link" href="class-home.html#lessons"><span data-i18n="browseClasses">Browse all classes</span> <span aria-hidden="true">→</span></a>
                     </div>
                     <div class="ld-unit-grid">
-                        <a class="ld-unit-card" href="measurement.html" aria-label="Open Measurement lesson">
+                        <a class="ld-unit-card" href="measurement.html" aria-label="Open Measurement lesson" data-i18n-aria-label="unit1Aria">
                             <span class="ld-unit-top"><span class="ld-unit-number">01</span><span class="ld-unit-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 34 33 10l6 6-24 24H9z"></path><path d="m27 16 5 5M22 21l5 5M17 26l5 5M12 31l5 5"></path></svg></span></span>
-                            <strong>Measurement</strong><span class="ld-unit-description">Units, dimensions and measurement uncertainty.</span>
-                            <span class="ld-unit-progress"><span>Learning progress</span><strong>Not tracked</strong></span><span class="ld-unit-track" aria-hidden="true"><span></span></span>
+                            <strong data-i18n="unit1Name">Measurement</strong><span class="ld-unit-description" data-i18n="unit1Description">Units, dimensions and measurement uncertainty.</span>
+                            <span class="ld-unit-progress"><span data-i18n="learningProgress">Learning progress</span><strong data-i18n="notTracked">Not tracked</strong></span><span class="ld-unit-track" aria-hidden="true"><span></span></span>
                         </a>
-                        <a class="ld-unit-card" href="mechanics.html" aria-label="Open Mechanics lesson">
+                        <a class="ld-unit-card" href="mechanics.html" aria-label="Open Mechanics lesson" data-i18n-aria-label="unit2Aria">
                             <span class="ld-unit-top"><span class="ld-unit-number">02</span><span class="ld-unit-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 38h30M13 35V11M14 34l22-18"></path><path d="m28 15 8 1-1 8"></path><circle cx="14" cy="34" r="3"></circle></svg></span></span>
-                            <strong>Mechanics</strong><span class="ld-unit-description">Motion, forces, work and energy in action.</span>
-                            <span class="ld-unit-progress"><span>Learning progress</span><strong>Not tracked</strong></span><span class="ld-unit-track" aria-hidden="true"><span></span></span>
+                            <strong data-i18n="unit2Name">Mechanics</strong><span class="ld-unit-description" data-i18n="unit2Description">Motion, forces, work and energy in action.</span>
+                            <span class="ld-unit-progress"><span data-i18n="learningProgress">Learning progress</span><strong data-i18n="notTracked">Not tracked</strong></span><span class="ld-unit-track" aria-hidden="true"><span></span></span>
                         </a>
-                        <a class="ld-unit-card" href="oscillations-waves.html" aria-label="Open Oscillations and Waves lesson">
+                        <a class="ld-unit-card" href="oscillations-waves.html" aria-label="Open Oscillations and Waves lesson" data-i18n-aria-label="unit3Aria">
                             <span class="ld-unit-top"><span class="ld-unit-number">03</span><span class="ld-unit-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M5 24c5 0 5-12 11-12s6 24 12 24 6-24 12-24"></path><path d="M5 39h38"></path></svg></span></span>
-                            <strong>Oscillations and Waves</strong><span class="ld-unit-description">Periodic motion, wave behavior and sound.</span>
-                            <span class="ld-unit-progress"><span>Learning progress</span><strong>Not tracked</strong></span><span class="ld-unit-track" aria-hidden="true"><span></span></span>
+                            <strong data-i18n="unit3Name">Oscillations and Waves</strong><span class="ld-unit-description" data-i18n="unit3Description">Periodic motion, wave behavior and sound.</span>
+                            <span class="ld-unit-progress"><span data-i18n="learningProgress">Learning progress</span><strong data-i18n="notTracked">Not tracked</strong></span><span class="ld-unit-track" aria-hidden="true"><span></span></span>
                         </a>
-                        <a class="ld-unit-card" href="thermal-physics.html" aria-label="Open Thermal Physics lesson">
+                        <a class="ld-unit-card" href="thermal-physics.html" aria-label="Open Thermal Physics lesson" data-i18n-aria-label="unit4Aria">
                             <span class="ld-unit-top"><span class="ld-unit-number">04</span><span class="ld-unit-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M19 27V11a5 5 0 0 1 10 0v16a10 10 0 1 1-10 0z"></path><path d="M24 17v18"></path><circle cx="24" cy="36" r="3"></circle></svg></span></span>
-                            <strong>Thermal Physics</strong><span class="ld-unit-description">Heat, temperature, gases and thermal processes.</span>
-                            <span class="ld-unit-progress"><span>Learning progress</span><strong>Not tracked</strong></span><span class="ld-unit-track" aria-hidden="true"><span></span></span>
+                            <strong data-i18n="unit4Name">Thermal Physics</strong><span class="ld-unit-description" data-i18n="unit4Description">Heat, temperature, gases and thermal processes.</span>
+                            <span class="ld-unit-progress"><span data-i18n="learningProgress">Learning progress</span><strong data-i18n="notTracked">Not tracked</strong></span><span class="ld-unit-track" aria-hidden="true"><span></span></span>
                         </a>
-                        <a class="ld-unit-card" href="gravitational-field.html" aria-label="Open Gravitational Field lesson">
+                        <a class="ld-unit-card" href="gravitational-field.html" aria-label="Open Gravitational Field lesson" data-i18n-aria-label="unit5Aria">
                             <span class="ld-unit-top"><span class="ld-unit-number">05</span><span class="ld-unit-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="25" r="8"></circle><path d="M10 15a19 19 0 0 1 29 5M38 33a19 19 0 0 1-29-5"></path><circle cx="39" cy="20" r="2"></circle></svg></span></span>
-                            <strong>Gravitational Field</strong><span class="ld-unit-description">Field strength, potential and orbital motion.</span>
-                            <span class="ld-unit-progress"><span>Learning progress</span><strong>Not tracked</strong></span><span class="ld-unit-track" aria-hidden="true"><span></span></span>
+                            <strong data-i18n="unit5Name">Gravitational Field</strong><span class="ld-unit-description" data-i18n="unit5Description">Field strength, potential and orbital motion.</span>
+                            <span class="ld-unit-progress"><span data-i18n="learningProgress">Learning progress</span><strong data-i18n="notTracked">Not tracked</strong></span><span class="ld-unit-track" aria-hidden="true"><span></span></span>
                         </a>
-                        <a class="ld-unit-card" href="electrostatic-field.html" aria-label="Open Electrostatic Field lesson">
+                        <a class="ld-unit-card" href="electrostatic-field.html" aria-label="Open Electrostatic Field lesson" data-i18n-aria-label="unit6Aria">
                             <span class="ld-unit-top"><span class="ld-unit-number">06</span><span class="ld-unit-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="13" cy="24" r="6"></circle><circle cx="35" cy="24" r="6"></circle><path d="M13 21v6M10 24h6M32 24h6M24 12v24M20 17l4-5 4 5M20 31l4 5 4-5"></path></svg></span></span>
-                            <strong>Electrostatic Field</strong><span class="ld-unit-description">Electric charge, fields and potential difference.</span>
-                            <span class="ld-unit-progress"><span>Learning progress</span><strong>Not tracked</strong></span><span class="ld-unit-track" aria-hidden="true"><span></span></span>
+                            <strong data-i18n="unit6Name">Electrostatic Field</strong><span class="ld-unit-description" data-i18n="unit6Description">Electric charge, fields and potential difference.</span>
+                            <span class="ld-unit-progress"><span data-i18n="learningProgress">Learning progress</span><strong data-i18n="notTracked">Not tracked</strong></span><span class="ld-unit-track" aria-hidden="true"><span></span></span>
                         </a>
-                        <a class="ld-unit-card" href="magnetic-field.html" aria-label="Open Magnetic Field lesson">
+                        <a class="ld-unit-card" href="magnetic-field.html" aria-label="Open Magnetic Field lesson" data-i18n-aria-label="unit7Aria">
                             <span class="ld-unit-top"><span class="ld-unit-number">07</span><span class="ld-unit-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M13 10v17a11 11 0 0 0 22 0V10"></path><path d="M13 10h8v9h-8zM27 10h8v9h-8zM8 35c4-5 8-5 12 0s8 5 12 0 7-5 10 0"></path></svg></span></span>
-                            <strong>Magnetic Field</strong><span class="ld-unit-description">Magnetic fields, forces and their effects.</span>
-                            <span class="ld-unit-progress"><span>Learning progress</span><strong>Not tracked</strong></span><span class="ld-unit-track" aria-hidden="true"><span></span></span>
+                            <strong data-i18n="unit7Name">Magnetic Field</strong><span class="ld-unit-description" data-i18n="unit7Description">Magnetic fields, forces and their effects.</span>
+                            <span class="ld-unit-progress"><span data-i18n="learningProgress">Learning progress</span><strong data-i18n="notTracked">Not tracked</strong></span><span class="ld-unit-track" aria-hidden="true"><span></span></span>
                         </a>
-                        <a class="ld-unit-card" href="current-electricity.html" aria-label="Open Current Electricity lesson">
+                        <a class="ld-unit-card" href="current-electricity.html" aria-label="Open Current Electricity lesson" data-i18n-aria-label="unit8Aria">
                             <span class="ld-unit-top"><span class="ld-unit-number">08</span><span class="ld-unit-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M7 15h34v20H7zM7 25h10M31 25h10M17 19v12M21 19v12"></path><path d="m27 20-4 5h5l-4 5"></path></svg></span></span>
-                            <strong>Current Electricity</strong><span class="ld-unit-description">Circuits, current, resistance and electrical energy.</span>
-                            <span class="ld-unit-progress"><span>Learning progress</span><strong>Not tracked</strong></span><span class="ld-unit-track" aria-hidden="true"><span></span></span>
+                            <strong data-i18n="unit8Name">Current Electricity</strong><span class="ld-unit-description" data-i18n="unit8Description">Circuits, current, resistance and electrical energy.</span>
+                            <span class="ld-unit-progress"><span data-i18n="learningProgress">Learning progress</span><strong data-i18n="notTracked">Not tracked</strong></span><span class="ld-unit-track" aria-hidden="true"><span></span></span>
                         </a>
-                        <a class="ld-unit-card" href="electronics.html" aria-label="Open Electronics lesson">
+                        <a class="ld-unit-card" href="electronics.html" aria-label="Open Electronics lesson" data-i18n-aria-label="unit9Aria">
                             <span class="ld-unit-top"><span class="ld-unit-number">09</span><span class="ld-unit-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="14" y="14" width="20" height="20" rx="3"></rect><path d="M19 8v6M24 8v6M29 8v6M19 34v6M24 34v6M29 34v6M8 19h6M8 24h6M8 29h6M34 19h6M34 24h6M34 29h6"></path><path d="m20 28 4-8 4 8"></path></svg></span></span>
-                            <strong>Electronics</strong><span class="ld-unit-description">Semiconductor components and electronic circuits.</span>
-                            <span class="ld-unit-progress"><span>Learning progress</span><strong>Not tracked</strong></span><span class="ld-unit-track" aria-hidden="true"><span></span></span>
+                            <strong data-i18n="unit9Name">Electronics</strong><span class="ld-unit-description" data-i18n="unit9Description">Semiconductor components and electronic circuits.</span>
+                            <span class="ld-unit-progress"><span data-i18n="learningProgress">Learning progress</span><strong data-i18n="notTracked">Not tracked</strong></span><span class="ld-unit-track" aria-hidden="true"><span></span></span>
                         </a>
-                        <a class="ld-unit-card" href="mechanical-properties.html" aria-label="Open Mechanical Properties of Matter lesson">
+                        <a class="ld-unit-card" href="mechanical-properties.html" aria-label="Open Mechanical Properties of Matter lesson" data-i18n-aria-label="unit10Aria">
                             <span class="ld-unit-top"><span class="ld-unit-number">10</span><span class="ld-unit-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 37h28M14 33V14h20v19M19 14V9M24 14V9M29 14V9"></path><path d="M18 25h12M24 20l6 5-6 5"></path></svg></span></span>
-                            <strong>Mechanical Properties of Matter</strong><span class="ld-unit-description">Elasticity, fluids and the behavior of materials.</span>
-                            <span class="ld-unit-progress"><span>Learning progress</span><strong>Not tracked</strong></span><span class="ld-unit-track" aria-hidden="true"><span></span></span>
+                            <strong data-i18n="unit10Name">Mechanical Properties of Matter</strong><span class="ld-unit-description" data-i18n="unit10Description">Elasticity, fluids and the behavior of materials.</span>
+                            <span class="ld-unit-progress"><span data-i18n="learningProgress">Learning progress</span><strong data-i18n="notTracked">Not tracked</strong></span><span class="ld-unit-track" aria-hidden="true"><span></span></span>
                         </a>
-                        <a class="ld-unit-card" href="matter-radiation.html" aria-label="Open Matter and Radiation lesson">
+                        <a class="ld-unit-card" href="matter-radiation.html" aria-label="Open Matter and Radiation lesson" data-i18n-aria-label="unit11Aria">
                             <span class="ld-unit-top"><span class="ld-unit-number">11</span><span class="ld-unit-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="24" cy="24" rx="18" ry="7"></ellipse><ellipse cx="24" cy="24" rx="18" ry="7" transform="rotate(60 24 24)"></ellipse><ellipse cx="24" cy="24" rx="18" ry="7" transform="rotate(120 24 24)"></ellipse><circle cx="24" cy="24" r="3"></circle></svg></span></span>
-                            <strong>Matter and Radiation</strong><span class="ld-unit-description">Explore the structure of matter and radiation.</span>
-                            <span class="ld-unit-progress"><span>Learning progress</span><strong>Not tracked</strong></span><span class="ld-unit-track" aria-hidden="true"><span></span></span>
+                            <strong data-i18n="unit11Name">Matter and Radiation</strong><span class="ld-unit-description" data-i18n="unit11Description">Explore the structure of matter and radiation.</span>
+                            <span class="ld-unit-progress"><span data-i18n="learningProgress">Learning progress</span><strong data-i18n="notTracked">Not tracked</strong></span><span class="ld-unit-track" aria-hidden="true"><span></span></span>
                         </a>
                     </div>
-                    <p class="ld-data-caption">Unit links open the existing lesson pages. Progress indicators are placeholders until secure student tracking is available.</p>
+                    <p class="ld-data-caption" data-i18n="unitCaption">Unit links open the existing lesson pages. Progress indicators are placeholders until secure student tracking is available.</p>
                 </section>
 
                 <section class="ld-section" id="learning-resources" aria-labelledby="resources-heading">
                     <div class="ld-section-heading">
                         <div>
-                            <p class="ld-section-kicker">STUDY YOUR WAY</p>
-                            <h2 id="resources-heading">Learning resources</h2>
+                            <p class="ld-section-kicker" data-i18n="resourcesKicker">STUDY YOUR WAY</p>
+                            <h2 id="resources-heading" data-i18n="resourcesHeading">Learning resources</h2>
                         </div>
-                        <p class="ld-heading-note">Resource availability is shown on each lesson page.</p>
+                        <p class="ld-heading-note" data-i18n="resourcesAvailabilityNote">Resource availability is shown on each lesson page.</p>
                     </div>
                     <div class="ld-resource-grid">
                         <a class="ld-resource-card" id="lesson-notes" href="measurement.html#resources">
                             <span class="ld-resource-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M8 5h12l5 5v17H8zM20 5v6h5M12 16h9M12 21h9"></path></svg></span>
-                            <span class="ld-resource-title">Lesson notes</span><span class="ld-resource-description">Open the existing lesson library and notes section.</span><span class="ld-resource-action">Browse notes <span aria-hidden="true">→</span></span>
+                            <span class="ld-resource-title" data-i18n="resourceNotes">Lesson notes</span><span class="ld-resource-description" data-i18n="resourceNotesDescription">Open the existing lesson library and notes section.</span><span class="ld-resource-action"><span data-i18n="browseNotes">Browse notes</span> <span aria-hidden="true">→</span></span>
                         </a>
                         <a class="ld-resource-card" href="mechanics.html#resources">
                             <span class="ld-resource-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 4 27 25H5z"></path><path d="M16 12v6M16 22v.1"></path></svg></span>
-                            <span class="ld-resource-title">MCQ discussions</span><span class="ld-resource-description">Find topic-based practice in the existing lesson pages.</span><span class="ld-resource-action">Explore MCQs <span aria-hidden="true">→</span></span>
+                            <span class="ld-resource-title" data-i18n="resourceMcq">MCQ discussions</span><span class="ld-resource-description" data-i18n="resourceMcqDescription">Find topic-based practice in the existing lesson pages.</span><span class="ld-resource-action"><span data-i18n="exploreMcqs">Explore MCQs</span> <span aria-hidden="true">→</span></span>
                         </a>
                         <a class="ld-resource-card" href="thermal-physics.html#resources">
                             <span class="ld-resource-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="4" y="7" width="24" height="18" rx="5"></rect><path d="m14 12 7 4-7 4z"></path></svg></span>
-                            <span class="ld-resource-title">Video lessons</span><span class="ld-resource-description">Visit the lesson library for syllabus-focused videos.</span><span class="ld-resource-action">Browse videos <span aria-hidden="true">→</span></span>
+                            <span class="ld-resource-title" data-i18n="resourceVideos">Video lessons</span><span class="ld-resource-description" data-i18n="resourceVideosDescription">Visit the lesson library for syllabus-focused videos.</span><span class="ld-resource-action"><span data-i18n="browseVideos">Browse videos</span> <span aria-hidden="true">→</span></span>
                         </a>
                         <a class="ld-resource-card" href="measurement.html#resources">
                             <span class="ld-resource-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M8 5h16v22H8zM12 11h8M12 16h8M12 21h5"></path></svg></span>
-                            <span class="ld-resource-title">Past papers</span><span class="ld-resource-description">Open the lesson resources for exam practice materials.</span><span class="ld-resource-action">Explore papers <span aria-hidden="true">→</span></span>
+                            <span class="ld-resource-title" data-i18n="resourcePastPapers">Past papers</span><span class="ld-resource-description" data-i18n="resourcePastPapersDescription">Open the lesson resources for exam practice materials.</span><span class="ld-resource-action"><span data-i18n="explorePapers">Explore papers</span> <span aria-hidden="true">→</span></span>
                         </a>
                         <a class="ld-resource-card" href="class-home.html#lessons">
                             <span class="ld-resource-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M6 6h20v20H6zM10 11h12M10 16h12M10 21h8"></path></svg></span>
-                            <span class="ld-resource-title">PDF materials</span><span class="ld-resource-description">No PDF download links are currently configured.</span><span class="ld-resource-action">Browse classes <span aria-hidden="true">→</span></span>
+                            <span class="ld-resource-title" data-i18n="resourcePdf">PDF materials</span><span class="ld-resource-description" data-i18n="resourcePdfDescription">No PDF download links are currently configured.</span><span class="ld-resource-action"><span data-i18n="browseClasses">Browse classes</span> <span aria-hidden="true">→</span></span>
                         </a>
                     </div>
-                    <p class="ld-data-caption">Some notes, videos, MCQ discussions and past-paper resources are marked “Available soon” on their lesson pages.</p>
+                    <p class="ld-data-caption" data-i18n="resourcesCaption">Some notes, videos, MCQ discussions and past-paper resources are marked “Available soon” on their lesson pages.</p>
                 </section>
 
-                <section class="ld-section" id="my-progress" aria-labelledby="progress-heading">
+                <section class="ld-section ld-progress-center" id="my-progress" aria-labelledby="progress-heading">
                     <div class="ld-section-heading">
                         <div>
-                            <p class="ld-section-kicker">SMALL STEPS ADD UP</p>
-                            <h2 id="progress-heading">Your learning journey</h2>
+                            <p class="ld-section-kicker" data-i18n="progressCenterKicker">STUDENT PROGRESS CENTER</p>
+                            <h2 id="progress-heading" data-i18n="progressCenterHeading">Your A/L Physics Progress Center</h2>
                         </div>
-                        <span class="ld-heading-note">Student tracking isn't connected</span>
+                        <span class="ld-heading-note ld-progress-sync-badge" id="progress-sync-badge" data-i18n="progressStatusChecking">Checking saved progress...</span>
                     </div>
+
                     <div class="ld-progress-grid">
-                        <article class="ld-progress-card ld-overview-card">
-                            <div class="ld-progress-ring" aria-hidden="true"><span>—</span></div>
+                        <article class="ld-progress-card ld-overview-card" aria-labelledby="overall-progress-heading">
+                            <div class="ld-progress-ring" id="progress-ring" aria-hidden="true">
+                                <svg class="ld-progress-ring-svg" viewBox="0 0 120 120" focusable="false">
+                                    <circle class="ld-ring-track" cx="60" cy="60" r="50"></circle>
+                                    <circle class="ld-ring-fill" id="progress-ring-fill" cx="60" cy="60" r="50"></circle>
+                                </svg>
+                                <span id="progress-overall-percent">—</span>
+                            </div>
                             <div class="ld-progress-copy">
-                                <p class="ld-mini-label">OVERALL PROGRESS</p>
-                                <h3>Ready when tracking is connected</h3>
-                                <p>No completion or percentage is available in this frontend preview.</p>
-                                <a href="login.html">About student access <span aria-hidden="true">→</span></a>
+                                <p class="ld-mini-label" id="overall-progress-heading" data-i18n="progressOverallLabel">OVERALL A/L PHYSICS SYLLABUS</p>
+                                <h3 id="progress-overall-headline" data-i18n="progressOverallEmptyHeadline">No recorded lesson progress yet</h3>
+                                <p id="progress-overall-summary" data-i18n="progressOverallEmptySummary">Your syllabus completion across all 11 units will update as you complete topics.</p>
+                                <dl class="ld-progress-metrics">
+                                    <div>
+                                        <dt data-i18n="progressMetricUnitsCompleted">Units completed</dt>
+                                        <dd><strong id="progress-units-completed">0</strong><span> / <span id="progress-total-units">11</span></span></dd>
+                                    </div>
+                                    <div>
+                                        <dt data-i18n="progressMetricInProgress">In progress</dt>
+                                        <dd><strong id="progress-units-in-progress">0</strong></dd>
+                                    </div>
+                                    <div>
+                                        <dt data-i18n="progressMetricTopicsMastered">Topics mastered</dt>
+                                        <dd><strong id="progress-topics-completed">0</strong><span> / <span id="progress-total-topics">66</span></span></dd>
+                                    </div>
+                                </dl>
+                                <a class="ld-progress-cta" id="progress-next-link" href="measurement.html">
+                                    <span id="progress-next-label" data-i18n="progressStartFirstUnit">Start with Measurement</span>
+                                    <span aria-hidden="true">→</span>
+                                </a>
                             </div>
                         </article>
-                        <article class="ld-progress-card ld-goal-card">
-                            <span class="ld-goal-spark" aria-hidden="true">✦</span>
-                            <p class="ld-mini-label">DAILY LEARNING GOAL</p>
-                            <h3>Make today a good study day</h3>
-                            <p>A personal goal can be set once student learning activity tracking is connected.</p>
-                            <div class="ld-goal-meter"><span></span></div>
-                            <div class="ld-goal-footer"><span>Goal not set</span><a href="login.html">How it works <span aria-hidden="true">→</span></a></div>
+
+                        <article class="ld-progress-card ld-goal-card" aria-labelledby="study-goal-heading">
+                            <div class="ld-goal-header">
+                                <div>
+                                    <p class="ld-mini-label" data-i18n="progressGoalKicker">PERSONAL STUDY GOAL</p>
+                                    <h3 id="study-goal-heading" data-i18n="progressGoalEmptyTitle">No study goal set yet</h3>
+                                </div>
+                                <button class="ld-goal-toggle" id="toggle-goal-form" type="button" aria-expanded="false" aria-controls="study-goal-form" data-i18n="progressGoalSetButton">Set study goal</button>
+                            </div>
+                            <p class="ld-goal-subtitle" id="study-goal-subtitle" data-i18n="progressGoalEmptyDescription">Set a realistic weekly lesson target, daily MCQ goal, or A/L focus unit for your account.</p>
+
+                            <div class="ld-goal-meters" id="study-goal-meters" hidden>
+                                <div class="ld-goal-meter-block" id="goal-lessons-block" hidden>
+                                    <div class="ld-goal-meter-label">
+                                        <span data-i18n="progressGoalWeeklyLabel">Weekly lesson activity</span>
+                                        <strong id="goal-lessons-ratio">0 / 0</strong>
+                                    </div>
+                                    <div class="ld-goal-meter"><span id="goal-lessons-bar"></span></div>
+                                </div>
+                                <div class="ld-goal-meter-block" id="goal-mcq-block" hidden>
+                                    <div class="ld-goal-meter-label">
+                                        <span data-i18n="progressGoalDailyMcqLabel">Daily MCQ target</span>
+                                        <strong id="goal-mcq-ratio">0 / 0</strong>
+                                    </div>
+                                    <div class="ld-goal-meter"><span id="goal-mcq-bar"></span></div>
+                                </div>
+                                <div class="ld-goal-tags" id="study-goal-tags"></div>
+                            </div>
+
+                            <form class="ld-goal-form" id="study-goal-form" hidden novalidate>
+                                <div class="ld-goal-form-grid">
+                                    <div class="ld-goal-field">
+                                        <label for="goal-weekly-lessons" data-i18n="progressGoalWeeklyInput">Weekly units target (1–11)</label>
+                                        <input id="goal-weekly-lessons" name="weekly_lessons_target" type="number" min="1" max="11" inputmode="numeric" placeholder="e.g. 2">
+                                    </div>
+                                    <div class="ld-goal-field">
+                                        <label for="goal-daily-mcq" data-i18n="progressGoalDailyMcqInput">Daily MCQ target (1–200)</label>
+                                        <input id="goal-daily-mcq" name="daily_mcq_target" type="number" min="1" max="200" inputmode="numeric" placeholder="e.g. 15">
+                                    </div>
+                                    <div class="ld-goal-field">
+                                        <label for="goal-exam-year" data-i18n="progressGoalExamYearInput">Target A/L year</label>
+                                        <input id="goal-exam-year" name="target_exam_year" type="number" min="2025" max="2035" inputmode="numeric" placeholder="e.g. 2027">
+                                    </div>
+                                    <div class="ld-goal-field">
+                                        <label for="goal-focus-unit" data-i18n="progressGoalFocusUnitInput">Priority unit</label>
+                                        <select id="goal-focus-unit" name="focus_unit_slug">
+                                            <option value="" data-i18n="progressGoalFocusUnitNone">No specific unit</option>
+                                        </select>
+                                    </div>
+                                    <div class="ld-goal-field ld-goal-field-wide">
+                                        <label for="goal-study-note" data-i18n="progressGoalNoteInput">Study reminder note</label>
+                                        <input id="goal-study-note" name="study_note" type="text" maxlength="160" data-i18n-placeholder="progressGoalNotePlaceholder" placeholder="Short personal study reminder (optional)">
+                                    </div>
+                                </div>
+                                <div class="ld-goal-form-actions">
+                                    <button class="ld-button ld-button-primary ld-goal-save-btn" id="save-goal-button" type="submit" data-i18n="progressGoalSaveButton">Save goal</button>
+                                    <button class="ld-button ld-button-secondary" id="cancel-goal-button" type="button" data-i18n="progressGoalCancelButton">Cancel</button>
+                                </div>
+                            </form>
+                            <p class="ld-goal-status" id="study-goal-status" role="status" aria-live="polite" hidden></p>
                         </article>
                     </div>
 
-                    <div class="ld-milestone-heading">
-                        <div><p class="ld-mini-label">FUTURE MILESTONES</p><h3>Achievements to unlock</h3></div>
-                        <span>Preview only · none earned</span>
-                    </div>
-                    <div class="ld-milestone-grid">
-                        <article class="ld-milestone-card">
-                            <span class="ld-milestone-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="m16 4 3.6 7.3 8 .1-5.8 5.2 1.8 7.8-7.6-4.1-7.6 4.1 1.8-7.8-5.8-5.2 8-.1z"></path></svg></span>
-                            <span><strong>First steps</strong><small>Complete your first lesson</small></span>
-                            <span class="ld-lock" aria-label="Not earned">◌</span>
-                        </article>
-                        <article class="ld-milestone-card">
-                            <span class="ld-milestone-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="11"></circle><circle cx="16" cy="16" r="6"></circle><circle cx="16" cy="16" r="2"></circle></svg></span>
-                            <span><strong>Problem solver</strong><small>Practice across multiple units</small></span>
-                            <span class="ld-lock" aria-label="Not earned">◌</span>
-                        </article>
-                        <article class="ld-milestone-card">
-                            <span class="ld-milestone-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M6 25V15M13 25V8M20 25V12M27 25V5M4 27h24"></path></svg></span>
-                            <span><strong>Steady progress</strong><small>Build a consistent study habit</small></span>
-                            <span class="ld-lock" aria-label="Not earned">◌</span>
-                        </article>
-                    </div>
-                    <p class="ld-data-caption">These are example milestone ideas for the design preview, not earned achievements. Awards require real student activity tracking.</p>
-                </section>
-
-                <section class="ld-section" id="recent-lessons" aria-labelledby="recent-heading">
-                    <div class="ld-section-heading">
-                        <div>
-                            <p class="ld-section-kicker">PICK UP ANYTIME</p>
-                            <h2 id="recent-heading">Recently viewed lessons</h2>
+                    <div class="ld-mastery-panel" aria-labelledby="unit-mastery-heading">
+                        <div class="ld-mastery-header">
+                            <div>
+                                <p class="ld-mini-label" data-i18n="progressUnitsKicker">SYLLABUS MASTERY</p>
+                                <h3 id="unit-mastery-heading" data-i18n="progressUnitsHeading">Lesson-by-lesson completion</h3>
+                            </div>
+                            <div class="ld-mastery-filters" role="group" aria-label="Filter units by progress" data-i18n-aria-label="progressFilterAria">
+                                <button class="ld-filter-chip is-active" type="button" data-progress-filter="all" aria-pressed="true" data-i18n="progressFilterAll">All (11)</button>
+                                <button class="ld-filter-chip" type="button" data-progress-filter="in_progress" aria-pressed="false" data-i18n="progressFilterInProgress">In progress</button>
+                                <button class="ld-filter-chip" type="button" data-progress-filter="completed" aria-pressed="false" data-i18n="progressFilterCompleted">Completed</button>
+                                <button class="ld-filter-chip" type="button" data-progress-filter="needs_mcq" aria-pressed="false" data-i18n="progressFilterNeedsMcq">Needs MCQ</button>
+                            </div>
                         </div>
+                        <div class="ld-mastery-list" id="unit-mastery-list"></div>
+                        <p class="ld-mastery-empty" id="unit-mastery-empty" hidden data-i18n="progressFilterEmpty">No units match this filter yet.</p>
                     </div>
-                    <div class="ld-recent-empty">
-                        <span class="ld-recent-icon" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="14"></circle><path d="M20 12v9l6 4"></path></svg></span>
-                        <div><strong>No recent activity to show</strong><p>Recently viewed lessons will appear here after student activity tracking is connected.</p></div>
-                        <a class="ld-button ld-button-secondary" href="#my-learning">Choose a unit <span aria-hidden="true">→</span></a>
+
+                    <div class="ld-progress-details-grid">
+                        <article class="ld-progress-card ld-mcq-card" aria-labelledby="mcq-performance-heading">
+                            <div class="ld-card-top">
+                                <div>
+                                    <p class="ld-mini-label" data-i18n="progressMcqKicker">EXAM PRACTICE</p>
+                                    <h3 id="mcq-performance-heading" data-i18n="progressMcqHeading">MCQ practice &amp; accuracy</h3>
+                                </div>
+                                <span class="ld-card-badge" id="mcq-status-badge" data-i18n="progressMcqEmptyBadge">No attempts yet</span>
+                            </div>
+                            <div class="ld-empty-panel" id="mcq-empty-state">
+                                <span class="ld-empty-icon" aria-hidden="true">?</span>
+                                <div>
+                                    <strong data-i18n="progressMcqEmptyTitle">No MCQ practice recorded yet</strong>
+                                    <p data-i18n="progressMcqEmptyDescription">Your real accuracy, total questions answered, and units needing revision will appear here once interactive MCQ quizzes are attempted.</p>
+                                </div>
+                            </div>
+                            <div class="ld-mcq-stats" id="mcq-stats-view" hidden>
+                                <dl class="ld-mcq-metric-grid">
+                                    <div>
+                                        <dt data-i18n="progressMcqAttempts">Attempts</dt>
+                                        <dd id="mcq-attempts-count">0</dd>
+                                    </div>
+                                    <div>
+                                        <dt data-i18n="progressMcqQuestions">Questions solved</dt>
+                                        <dd id="mcq-questions-count">0</dd>
+                                    </div>
+                                    <div>
+                                        <dt data-i18n="progressMcqAccuracy">Overall accuracy</dt>
+                                        <dd id="mcq-accuracy-value">—</dd>
+                                    </div>
+                                </dl>
+                                <p class="ld-mcq-focus" id="mcq-focus-summary"></p>
+                            </div>
+                        </article>
+
+                        <article class="ld-progress-card ld-history-card" aria-labelledby="study-history-heading">
+                            <div class="ld-card-top">
+                                <div>
+                                    <p class="ld-mini-label" data-i18n="progressHistoryKicker">STUDY HISTORY</p>
+                                    <h3 id="study-history-heading" data-i18n="progressHistoryHeading">Recent learning activity</h3>
+                                </div>
+                                <span class="ld-card-badge" id="history-count-badge" data-i18n="progressHistoryEmptyBadge">0 events</span>
+                            </div>
+                            <div class="ld-empty-panel" id="history-empty-state">
+                                <span class="ld-empty-icon" aria-hidden="true">◷</span>
+                                <div>
+                                    <strong data-i18n="progressHistoryEmptyTitle">No study history recorded yet</strong>
+                                    <p data-i18n="progressHistoryEmptyDescription">When you open lessons, complete syllabus topics, practice MCQs, or update your study goal, your activity log will appear here.</p>
+                                </div>
+                            </div>
+                            <ol class="ld-history-timeline" id="history-timeline" hidden></ol>
+                        </article>
                     </div>
                 </section>
 
                 <section class="ld-section" id="quick-access" aria-labelledby="quick-access-heading">
                     <div class="ld-section-heading">
                         <div>
-                            <p class="ld-section-kicker">YOUR SHORTCUTS</p>
-                            <h2 id="quick-access-heading">Quick access</h2>
+                            <p class="ld-section-kicker" data-i18n="quickAccessKicker">YOUR SHORTCUTS</p>
+                            <h2 id="quick-access-heading" data-i18n="quickAccessHeading">Quick access</h2>
                         </div>
                     </div>
                     <div class="ld-quick-grid">
-                        <a class="ld-quick-card" href="profile.html"><span aria-hidden="true">01</span><strong>My Profile</strong><small>Profile preview</small></a>
-                        <a class="ld-quick-card" href="class-home.html#lessons"><span aria-hidden="true">02</span><strong>My Courses</strong><small>Browse all 11 units</small></a>
-                        <a class="ld-quick-card" href="#lesson-notes"><span aria-hidden="true">03</span><strong>My Notes</strong><small>Open the notes library</small></a>
-                        <a class="ld-quick-card" href="contact.html"><span aria-hidden="true">04</span><strong>Contact Teacher</strong><small>Open the contact page</small></a>
+                        <a class="ld-quick-card" href="profile.html"><span aria-hidden="true">01</span><strong data-i18n="quickProfile">My Profile</strong><small data-i18n="quickProfileDescription">Profile preview</small></a>
+                        <a class="ld-quick-card" href="class-home.html#lessons"><span aria-hidden="true">02</span><strong data-i18n="quickCourses">My Courses</strong><small data-i18n="quickCoursesDescription">Browse all 11 units</small></a>
+                        <a class="ld-quick-card" href="#lesson-notes"><span aria-hidden="true">03</span><strong data-i18n="quickNotes">My Notes</strong><small data-i18n="quickNotesDescription">Open the notes library</small></a>
+                        <a class="ld-quick-card" href="contact.html"><span aria-hidden="true">04</span><strong data-i18n="quickContact">Contact Teacher</strong><small data-i18n="quickContactDescription">Open the contact page</small></a>
                         <div class="ld-quick-card ld-logout-card">
                             <span aria-hidden="true">05</span>
-                            <button id="student-logout-button" type="button" disabled aria-describedby="logout-note">Log out <small>Sign out</small></button>
+                            <button id="student-logout-button" type="button" disabled aria-describedby="logout-note"><span data-i18n="logoutButton">Log out</span> <small data-i18n="signOut">Sign out</small></button>
                         </div>
                     </div>
-                    <p class="ld-logout-note" id="logout-note" role="status" aria-live="polite">Checking student session...</p>
+                    <p class="ld-logout-note" id="logout-note" role="status" aria-live="polite" data-i18n="logoutChecking">Checking student session...</p>
                 </section>
             </div>
         </div>
@@ -289,6 +402,9 @@
     <script src="js/site-shell.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="js/supabase-client.js"></script>
+    <script src="js/dashboard-i18n.js"></script>
+    <script src="js/learning-medium.js"></script>
+    <script src="js/student-progress.js"></script>
     <script src="js/student-auth.js"></script>
     <script src="js/color-themes.js"></script>
 </body>

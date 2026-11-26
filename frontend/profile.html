@@ -6,6 +6,7 @@
     <meta name="description" content="Manage your private student profile for SANDUN ABEYSEKARA A/L Physics education.">
     <title>My Profile | SANDUN ABEYSEKARA</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/site-language.js"></script>
 </head>
 <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -77,6 +78,15 @@
                                 <label for="profile-grade">Grade <span>Optional</span></label>
                                 <input id="profile-grade" name="grade" type="text" maxlength="30" placeholder="e.g. Grade 12">
                             </div>
+                            <div class="profile-field">
+                                <label for="profile-learning-medium">Learning Medium</label>
+                                <select id="profile-learning-medium" name="learning-medium" required>
+                                    <option value="" disabled selected>Choose your learning medium</option>
+                                    <option value="si">Sinhala Medium (සිංහල මාධ්‍යය)</option>
+                                    <option value="en">English Medium</option>
+                                    <option value="ta">Tamil Medium (தமிழ் மூலம்)</option>
+                                </select>
+                            </div>
                             <div class="profile-field profile-field-wide">
                                 <label for="profile-about">About me <span>Optional</span></label>
                                 <textarea id="profile-about" name="about" rows="4" maxlength="240" placeholder="A short introduction about your learning goals or interests"></textarea>
@@ -92,7 +102,7 @@
                             </button>
                             <button class="profile-reset-button" type="reset">Discard unsaved changes</button>
                         </div>
-                        <p class="profile-save-help" id="profile-save-help">Full name, display name, school, grade and about me are saved to your private profile. A selected photo is uploaded to private Storage and its path is saved with your profile.</p>
+                        <p class="profile-save-help" id="profile-save-help">Your learning medium, name, school, grade and about me are saved to your private profile. A selected photo is uploaded to private Storage and its path is saved with your profile.</p>
                         <p class="profile-save-status" id="profile-save-status" role="status" aria-live="polite" hidden>Checking your account and loading your profile...</p>
                     </form>
                 </section>
@@ -121,6 +131,7 @@
                     <dl class="profile-preview-details">
                         <div><dt>School</dt><dd id="profile-preview-school">Not provided</dd></div>
                         <div><dt>Grade</dt><dd id="profile-preview-grade">Not provided</dd></div>
+                        <div><dt>Learning medium</dt><dd id="profile-preview-learning-medium">Not selected</dd></div>
                     </dl>
                     <div class="profile-about-preview">
                         <p>ABOUT ME</p>

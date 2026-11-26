@@ -6,6 +6,7 @@
     <meta name="description" content="A/L Physics Mechanics syllabus resources with Sandun Abeysekara.">
     <title>Mechanics | Sandun Abeysekara</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/site-language.js"></script>
 </head>
 <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -42,8 +43,7 @@
                     <a class="breadcrumb" href="class-home.html#lessons">← Back to classes</a>
                     <p class="eyebrow"><span></span> Advanced Level · Lesson 02</p>
                     <h1>Mechanics</h1>
-                    <p class="sinhala-title" lang="si">යාන්ත්‍ර විද්‍යාව</p>
-                    <p class="course-lead">Understand motion, forces, momentum and energy through clear concepts.</p>
+                    <p class="course-lead" data-i18n="lessonMechanicsLead">Understand motion, forces, momentum and energy through clear concepts.</p>
                     <div class="course-actions">
                         <a class="button button-primary" href="#resources">Explore resources →</a>
                         <div class="lesson-meta"><strong>6</strong><span>Learning areas</span></div>
@@ -57,7 +57,7 @@
                         <div><strong>6</strong><span>Resources</span></div>
                         <div><strong>A/L</strong><span>Level</span></div>
                     </div>
-                    <p lang="si">දෛශික · ගතිකතාව · බලය · ශක්තිය</p>
+                    <figure class="lesson-page-artwork" aria-hidden="true"><svg viewBox="0 0 320 210" focusable="false"><use href="#mechanics"></use></svg></figure>
                 </aside>
             </div>
         </section>
@@ -65,15 +65,15 @@
             <div class="section-shell">
                 <div class="section-heading">
                     <div><p class="eyebrow dark"><span></span> Lesson library</p><h2>Everything you need to learn</h2></div>
-                    <p>Curated materials for deeper understanding and confident exam preparation.</p>
+                    <p data-i18n="lessonLibraryDescription">Curated materials for deeper understanding and confident exam preparation.</p>
                 </div>
-                <div class="resource-grid">
-                    <article class="resource-card featured"><div class="card-icon">▶</div><p class="card-index">01 · VIDEO</p><h3>Video Lessons</h3><p>Clear syllabus-focused explanations and examples.</p><span class="card-status">Available soon</span></article>
-                    <article class="resource-card"><div class="card-icon">N</div><p class="card-index">02 · NOTES</p><h3>Short Notes</h3><p>Definitions, formulas and revision summaries.</p><span class="card-status">Available soon</span></article>
-                    <article class="resource-card"><div class="card-icon">?</div><p class="card-index">03 · PRACTICE</p><h3>MCQ Discussion</h3><p>Build accuracy with topic-based questions.</p><span class="card-status">Available soon</span></article>
-                    <article class="resource-card"><div class="card-icon">↗</div><p class="card-index">04 · EXAM</p><h3>Structured Questions</h3><p>Exam-style calculations and written solutions.</p><span class="card-status">Available soon</span></article>
-                    <article class="resource-card"><div class="card-icon">□</div><p class="card-index">05 · ARCHIVE</p><h3>Past Papers</h3><p>Previous questions arranged for revision.</p><span class="card-status">Available soon</span></article>
-                    <article class="resource-card"><div class="card-icon">⚗</div><p class="card-index">06 · PRACTICAL</p><h3>Practical Activities</h3><p>Relevant experiments and observations.</p><span class="card-status">Available soon</span></article>
+                <div class="resource-grid" data-i18n-resource-grid="lesson">
+                    <article class="resource-card featured"><div class="card-icon">▶</div><p class="card-index">01 · VIDEO</p><h3>Video Lessons</h3><p data-i18n="lessonVideoDescription">Clear syllabus-focused explanations and examples.</p><span class="card-status">Available soon</span></article>
+                    <article class="resource-card"><div class="card-icon">N</div><p class="card-index">02 · NOTES</p><h3>Short Notes</h3><p data-i18n="lessonNotesDescription">Definitions, formulas and revision summaries.</p><span class="card-status">Available soon</span></article>
+                    <article class="resource-card"><div class="card-icon">?</div><p class="card-index">03 · PRACTICE</p><h3>MCQ Discussion</h3><p data-i18n="lessonMcqDescription">Build accuracy with topic-based questions.</p><span class="card-status">Available soon</span></article>
+                    <article class="resource-card"><div class="card-icon">↗</div><p class="card-index">04 · EXAM</p><h3>Structured Questions</h3><p data-i18n="lessonStructuredDescription">Exam-style calculations and written solutions.</p><span class="card-status">Available soon</span></article>
+                    <article class="resource-card"><div class="card-icon">□</div><p class="card-index">05 · ARCHIVE</p><h3>Past Papers</h3><p data-i18n="lessonPapersDescription">Previous questions arranged for revision.</p><span class="card-status">Available soon</span></article>
+                    <article class="resource-card"><div class="card-icon">⚗</div><p class="card-index">06 · PRACTICAL</p><h3>Practical Activities</h3><p data-i18n="lessonPracticalDescription">Relevant experiments and observations.</p><span class="card-status">Available soon</span></article>
                 </div>
             </div>
         </section>
@@ -82,9 +82,8 @@
                 <div class="topics-heading">
                     <p class="eyebrow"><span></span> GCE A/L syllabus outline</p>
                     <h2>What you will learn</h2>
-                    <p lang="si">යාන්ත්‍ර විද්‍යාව පාඩමේ ප්‍රධාන අංශ</p>
                 </div>
-                <ol class="topics-list">
+                <ol class="topics-list" data-i18n-topic-prefix="mechanicsTopic">
                     <li><span>01</span><div><strong>Vectors</strong><small>Components, resultants and vector resolution</small></div></li>
                     <li><span>02</span><div><strong>Linear motion</strong><small>Motion graphs and equations of motion</small></div></li>
                     <li><span>03</span><div><strong>Newton&apos;s laws</strong><small>Forces, friction and Newton&apos;s principles</small></div></li>
@@ -102,5 +101,6 @@
     </footer>
     <script src="js/site-shell.js"></script>
     <script src="js/color-themes.js"></script>
+    <script src="js/physics-illustrations.js"></script>
 </body>
 </html>
